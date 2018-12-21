@@ -1,0 +1,335 @@
+// Dota Abilities Override File
+#base "abilities/base.txt"
+#base "abilities/abaddon.txt"
+#base "abilities/abyssal_underlord.txt"
+#base "abilities/alchemist.txt"
+#base "abilities/ancient_apparition.txt"
+#base "abilities/antimage.txt"
+#base "abilities/axe.txt"
+#base "abilities/bane.txt"
+#base "abilities/batrider.txt"
+#base "abilities/beastmaster.txt"
+#base "abilities/bloodseeker.txt"
+#base "abilities/bounty_hunter.txt"
+#base "abilities/brewmaster.txt"
+#base "abilities/bristleback.txt"
+#base "abilities/broodmother.txt"
+#base "abilities/centaur.txt"
+#base "abilities/chaos_knight.txt"
+#base "abilities/chen.txt"
+#base "abilities/clinkz.txt"
+#base "abilities/crystal_maiden.txt"
+#base "abilities/dark_seer.txt"
+#base "abilities/dark_willow.txt"
+#base "abilities/dazzle.txt"
+#base "abilities/death_prophet.txt"
+#base "abilities/disruptor.txt"
+#base "abilities/doom_bringer.txt"
+#base "abilities/dragon_knight.txt"
+#base "abilities/drow_ranger.txt"
+#base "abilities/earth_spirit.txt"
+#base "abilities/earthshaker.txt"
+#base "abilities/elder_titan.txt"
+#base "abilities/ember_spirit.txt"
+#base "abilities/enchantress.txt"
+#base "abilities/enigma.txt"
+#base "abilities/faceless_void.txt"
+#base "abilities/furion.txt"
+#base "abilities/grimstroke.txt"
+#base "abilities/gyrocopter.txt"
+#base "abilities/huskar.txt"
+#base "abilities/invoker.txt"
+#base "abilities/jakiro.txt"
+#base "abilities/juggernaut.txt"
+#base "abilities/keeper_of_the_light.txt"
+#base "abilities/kunkka.txt"
+#base "abilities/legion_commander.txt"
+#base "abilities/leshrac.txt"
+#base "abilities/lich.txt"
+#base "abilities/life_stealer.txt"
+#base "abilities/lina.txt"
+#base "abilities/lion.txt"
+#base "abilities/lone_druid.txt"
+#base "abilities/luna.txt"
+#base "abilities/lycan.txt"
+#base "abilities/magnataur.txt"
+#base "abilities/medusa.txt"
+#base "abilities/meepo.txt"
+#base "abilities/mirana.txt"
+#base "abilities/monkey_king.txt"
+#base "abilities/morphling.txt"
+#base "abilities/naga_siren.txt"
+#base "abilities/necrolyte.txt"
+#base "abilities/nevermore.txt"
+#base "abilities/night_stalker.txt"
+#base "abilities/nyx_assassin.txt"
+#base "abilities/obsidian_destroyer.txt"
+#base "abilities/ogre_magi.txt"
+#base "abilities/omniknight.txt"
+#base "abilities/oracle.txt"
+#base "abilities/pangolier.txt"
+#base "abilities/phantom_assassin.txt"
+#base "abilities/phantom_lancer.txt"
+#base "abilities/phoenix.txt"
+#base "abilities/puck.txt"
+#base "abilities/pudge.txt"
+#base "abilities/pugna.txt"
+#base "abilities/queenofpain.txt"
+#base "abilities/rattletrap.txt"
+#base "abilities/razor.txt"
+#base "abilities/riki.txt"
+#base "abilities/rubick.txt"
+#base "abilities/sand_king.txt"
+#base "abilities/shadow_demon.txt"
+#base "abilities/shadow_shaman.txt"
+#base "abilities/shredder.txt"
+#base "abilities/silencer.txt"
+#base "abilities/skeleton_king.txt"
+#base "abilities/skywrath_mage.txt"
+#base "abilities/slardar.txt"
+#base "abilities/slark.txt"
+#base "abilities/sniper.txt"
+#base "abilities/spectre.txt"
+#base "abilities/spirit_breaker.txt"
+#base "abilities/storm_spirit.txt"
+#base "abilities/sven.txt"
+#base "abilities/templar_assassin.txt"
+#base "abilities/terrorblade.txt"
+#base "abilities/tidehunter.txt"
+#base "abilities/tinker.txt"
+#base "abilities/tiny.txt"
+#base "abilities/treant_protector.txt"
+#base "abilities/troll_warlord.txt"
+#base "abilities/tusk.txt"
+#base "abilities/undying.txt"
+#base "abilities/ursa.txt"
+#base "abilities/vengefulspirit.txt"
+#base "abilities/venomancer.txt"
+#base "abilities/viper.txt"
+#base "abilities/visage.txt"
+#base "abilities/warlock.txt"
+#base "abilities/weaver.txt"
+#base "abilities/windrunner.txt"
+#base "abilities/wisp.txt"
+#base "abilities/witch_doctor.txt"
+#base "abilities/zuus.txt"
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Tango
+	//=================================================================================================================
+	"item_tango"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+
+	//=================================================================================================================
+	// Flask
+	//=================================================================================================================
+	"item_flask"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	}
+
+	//=================================================================================================================
+	// Clarity
+	//=================================================================================================================
+	"item_clarity"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	}
+	
+	//=================================================================================================================
+	// Enchanted Mango
+	//=================================================================================================================
+	"item_enchanted_mango"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+
+	//=================================================================================================================
+	// Quelling Blade
+	//=================================================================================================================
+	"item_quelling_blade"
+	{
+		"ItemCost"						"500"
+	}
+
+	//=================================================================================================================
+	// Courier
+	//=================================================================================================================
+	"item_courier"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	//=================================================================================================================
+	// Flying Courier
+	//=================================================================================================================
+	"item_flying_courier"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	//=================================================================================================================
+	// Smoke of Deceit
+	//=================================================================================================================
+	"item_smoke_of_deceit"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+
+	//=================================================================================================================
+	// Divine Rapier
+	//=================================================================================================================
+	"item_rapier"
+	{
+		"ItemPurchasable"				"1"
+	}
+
+	//=================================================================================================================
+	// Helm of the Dominator
+	//=================================================================================================================
+	"item_helm_of_the_dominator"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+	//=================================================================================================================
+	// Recipe: Helm of the Dominator
+	//=================================================================================================================
+	"item_recipe_helm_of_the_dominator"
+	{
+		"ItemPurchasable"						"0"	
+	}
+
+	//=================================================================================================================
+	// Heart
+	//=================================================================================================================
+	"item_heart"
+	{
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"45"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen_rate"		"1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_melee"		"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_ranged_tooltip"		"7"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Battlefury
+	//=================================================================================================================
+	"item_bfury"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bf;battle fury"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus"			"125"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_ranged"	"125"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_starting_width"			"150"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_ending_width"			"280"
+			}			
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"			"520"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"			"350"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_ward"			"450"
+			}			
+		}
+	}
+}

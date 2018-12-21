@@ -1,0 +1,126 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Base 
+	// Note: This is loaded and overriden/added to by values in the specific ability chunks.
+	//=================================================================================================================
+	"ability_base"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"0"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NONE"
+		"OnCastbar"						"1"
+		"OnLearnbar"					"1"
+		"FightRecapLevel"				"0"
+		"LevelsBetweenUpgrades"         "2"
+		"MaxLevel"                      "7"
+
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"250"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityChannelTime"			"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityDuration"				"0.0 0.0 0.0 0.0"
+		"AbilitySharedCooldown"			""
+		"AbilityDamage"					"0 0 0 0"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityModifierSupportValue"	"1.0"	// for stats tracking.
+		"AbilityModifierSupportBonus"	"0"		// for stats tracking.
+		
+		// Item Info	
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemInitialCharges"			"0"
+		"ItemCombinable"				"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+		"ItemRecipe"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemRequiresCharges"			"0"
+		"ItemKillable"					"1"
+		"ItemDisassemblable"			"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclaresPurchase"			"0"
+	}
+	
+	"dota_base_ability"
+	{
+	}
+
+	//=================================================================================================================
+	// Ability: Attack
+	//=================================================================================================================
+	"default_attack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5001"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Attribute Bonus
+	//=================================================================================================================
+	"attribute_bonus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5002"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attribute_bonus_all"		"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"0 5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed"				"0 0 20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"0 0 0 5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Deward Ability
+	//=================================================================================================================
+	"ability_deward"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5669"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+	}
+}

@@ -1,0 +1,253 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Axe Berserker's Call
+	//=================================================================================================================
+	"axe_berserkers_call"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5007"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Axe.Berserkers_Call"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.3 0.3 0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0 0 0 0 0 0 0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 80 90 100 110 120 130"	
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300 325 350 375 400 425 450"
+				"LinkedSpecialBonus"		"special_bonus_unique_axe_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"30 35 40 45 50 55 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0 2.4 2.8 3.2 3.4 3.8 4.0"
+			}	
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Ability: Axe Battle Hunger
+	//=================================================================================================================
+	"axe_battle_hunger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5008"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Axe.Battle_Hunger"
+		
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 25.0 20.0 15.0 10.0 5.0 1.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 60 70 80 90 100 110"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"12.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"-12"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_bonus"						"12"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_second"			"16 24 32 40 48 56 64"
+				"LinkedSpecialBonus"		"special_bonus_unique_axe"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction_scepter"	"30"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	
+	//=================================================================================================================
+	// Ability: Axe Counter Helix
+	//=================================================================================================================
+	"axe_counter_helix"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5009"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_Axe.CounterHelix"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.45 0.4 0.35 0.3 0.25 0.2 0.1"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"75 110 145 180 225 245 325"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"325"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"5 10 15 20 25 30 35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"0.45 0.4 0.35 0.3 0.15 0.2 0.1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Ability: Axe Culling Blade
+	//=================================================================================================================
+	"axe_culling_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5010"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+
+		"AbilitySound"					"Hero_Axe.Culling_Blade_Success"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"75.0 65.0 55.0 50.0 45.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 120 180 240 300"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"kill_threshold"			"250 325 400 475 525"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"150 250 300 400 450"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_bonus"				"30"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"atk_speed_bonus_tooltip"				"30"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"speed_duration"			"8"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_aoe"					"900"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_aoe"				"700"
+			}
+		}
+	}
+}	

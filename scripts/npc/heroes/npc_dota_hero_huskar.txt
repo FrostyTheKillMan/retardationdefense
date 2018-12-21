@@ -1,0 +1,10 @@
+//=================================================================================================================
+// HERO: Huskar
+//=================================================================================================================
+"npc_dota_hero_huskar"
+{
+	"overrider_hero"		"npc_dota_hero_huskar"
+	"Ability3"				"huskar_inner_vitality"
+	"Ability4"				"huskar_berserkers_blood"
+	"Ability5"				"huskar_berserk"
+}

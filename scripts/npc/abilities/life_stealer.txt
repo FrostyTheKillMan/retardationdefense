@@ -1,0 +1,392 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lifestealer: Rage
+	//=================================================================================================================
+	"life_stealer_rage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5249"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_LifeStealer.Rage"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 75 75 75"
+		
+		"AbilityDuration"				"3 4 5 6 7 8 9"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_bonus"	"40 50 60 70 80 90 100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Lifestealer: Feast
+	//=================================================================================================================
+	"life_stealer_feast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5250"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_leech_percent"		"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer_3"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	
+	//=================================================================================================================
+	// Lifestealer: Open Wounds
+	//=================================================================================================================
+	"life_stealer_open_wounds"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5251"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_LifeStealer.OpenWounds.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"200 300 400 500 600 700 800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32 28 24 20 16 12 8"
+		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"8 8 8 8 8 8 8"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"140"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_steps"			"-70 -70 -60 -50 -30 -10 -10 -10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_percent"			"40 50 60 70 80 90 100"
+				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer_2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_tooltip"			"70"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"200 300 400 500 600 700 800"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Lifestealer: Infest
+	//=================================================================================================================
+	"life_stealer_infest"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5252"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"         "6"
+      		  "MaxLevel"                      "5"
+		"AbilitySound"					"Hero_LifeStealer.Infest"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 80 60 40 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 50 50"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700 700 700 700 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 300 450 600 750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"infest_scepter_duration"		"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_increase_pct"				"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_scepter"	"500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_scepter"	"15"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Naix: Assimilate ( scepter ability )
+	//=================================================================================================================
+	"life_stealer_assimilate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5671"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700 700 700"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"order_lock_duration"		"2.0"
+			}
+			
+		}
+	}
+
+	//=================================================================================================================
+	// Lifestealer: Assimilate Eject
+	//=================================================================================================================
+	"life_stealer_assimilate_eject"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5675"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_tooltip"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_tooltip"				"700 700 700"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lifestealer: Consume
+	//=================================================================================================================
+	"life_stealer_consume"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5253"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_LifeStealer.Consume"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+	}
+	
+	//=================================================================================================================
+	// Lifestealer: Control
+	//=================================================================================================================
+	"life_stealer_control"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5655"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+	}
+	
+	//=================================================================================================================
+	// Lifestealer: Empty 1
+	//=================================================================================================================
+	"life_stealer_empty_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5657"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+	}
+
+	//=================================================================================================================
+	// Lifestealer: Empty 2
+	//=================================================================================================================
+	"life_stealer_empty_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5658"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+	}
+
+	//=================================================================================================================
+	// Lifestealer: Empty 3
+	//=================================================================================================================
+	"life_stealer_empty_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5659"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+	}
+
+	//=================================================================================================================
+	// Lifestealer: Empty 4
+	//=================================================================================================================
+	"life_stealer_empty_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5660"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+	}
+}

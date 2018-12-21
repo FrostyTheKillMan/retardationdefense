@@ -1,0 +1,148 @@
+//=================================================================================
+// Creature: Mirana
+// Round 12
+//=================================================================================
+"npc_dota_creature_mirana"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/mirana/mirana.vmdl"
+	"SoundSet"					"Hero_Mirana"
+	"Level"						"1"
+	"ModelScale" 				"1.1"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+	"ConsideredHero"			"1"
+	//"IsAncient"					"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"mirana_starfall"
+	"Ability2"					"mirana_arrow"
+	"Ability3"					"mirana_leap"
+	"Ability4"					"mirana_invis"
+	"Ability5"					"" // creature_mirana_global_vision
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"
+	"MagicalResistance"			"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"275"
+	"AttackDamageMax"			"325"
+	"AttackRate"				"1.7"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"15000"
+	"AttackRange"				"600"
+	"ProjectileModel"			"particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
+	"ProjectileSpeed"			"900"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"210"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"
+	"BountyGoldMin"				"0"
+	"BountyGoldMax"				"0"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"400"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"3800"
+	"StatusHealthRegen"			"10.0"
+	"StatusMana"				"2000"
+	"StatusManaRegen"			"10.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"15000"
+	"VisionNighttimeRange"		"15000"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"1"
+
+	"vscripts"					"ai/mirana_ai.lua"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"0.0"
+				"Avoidance"		"100.0"
+				"Support"		"50.0"
+			}
+		}
+
+		"EquippedItems"
+		{
+			"PhaseBoots"
+			{
+				"Item"					"item_phase_boots"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"300"
+		"DamageGain"				"30"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"6658" // weapon: Crescent Bow
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"404"
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"405"
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"406"
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"407"
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"408"
+			}
+		}
+	}
+}

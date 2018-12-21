@@ -1,0 +1,249 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Vengefulspirit Magic Missle
+	//=================================================================================================================
+	"vengefulspirit_magic_missile"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5122"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 120 130 140 150 160 170"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_speed"	"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_missile_stun"	"1.5 1.6 1.7 1.8 1.9 2.0 2.1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_damage"	"100 175 250 325 400 475 525"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Ability: Vengefulspirit Command Aura
+	//=================================================================================================================
+	"vengefulspirit_command_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5123"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"12 18 24 30 36 42 48"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"1200"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_do_damage_percent"	"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_do_damage_percent_tooltip"			"100"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_take_damage_percent"	"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_take_damage_percent_tooltip"			"200"
+			}		
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_duration"			"5"
+			}		
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Ability: Vengefulspirit Wave of Terror
+	//=================================================================================================================
+	"vengefulspirit_wave_of_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5124"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_VengefulSpirit.WaveOfTerror"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+		"AbilityDuration"				"8"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"60 80 100 120 140 160 180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25 30 35 40 45 50 55"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"wave_speed"		"2000.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wave_width"		"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"	"-3 -4 -5 -6 -7 -8 -9"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_4"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tooltip_duration"	"8"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_aoe"		"300"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"3.0 3.0 3.0 3.0 3.0 3.0 3.0"
+			}
+			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Ability: Vengefulspirit Nether Swap
+	//=================================================================================================================
+	"vengefulspirit_nether_swap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5125"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"AbilitySound"					"Hero_VengefulSpirit.NetherSwap"
+
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 950 1200 1450 1700"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200 250 300"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"tooltip_range"					"700 950 1200 1450 1700"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"nether_swap_cooldown_scepter"	"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"illusion_damage_out_pct_scepter"	"100"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"illusion_damage_in_pct_scepter"	"150"
+			}			
+		}
+	}
+}

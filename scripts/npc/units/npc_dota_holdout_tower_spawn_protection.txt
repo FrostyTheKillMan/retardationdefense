@@ -1,0 +1,93 @@
+//=================================================================================
+// Tower - Spawn Protection - High Attack Rate
+//=================================================================================
+"npc_dota_holdout_tower_spawn_protection"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_holdout_tower_spawn_protection"
+	"Model"						"models/props_structures/tower001.vmdl"
+	"SoundSet"					"Tower.Fire"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"200"
+	"Level"						"1"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					""	// Ability 1.
+	"Ability2"					""	// Ability 2.
+	"Ability3"					""	// Ability 3.
+	"Ability4"					""	// Ability 4.
+	"Ability5"					""	// Ability 5.
+	"Ability6"					""	// Ability 6 - Extra.
+	"Ability7"					""	// Ability 7 - Extra.
+	"Ability8"					""	// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"20"
+	"MagicalResistance"			"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"200"
+	"AttackDamageMax"			"200"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"0.05"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"400"
+	"AttackRange"				"400"
+	"ProjectileModel"			"particles/base_attacks/ranged_tower_bad.vpcf"
+	"ProjectileSpeed"			"1000"
+
+	// Attributes
+	//----------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"0"
+	"AttributeStrengthGain"		"0"
+	"AttributeBaseIntelligence"	"0"
+	"AttributeIntelligenceGain"	"0"
+	"AttributeBaseAgility"		"0"
+	"AttributeAgilityGain"		"0"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"
+	"BountyGoldMin"				"0"
+	"BountyGoldMax"				"0"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+	"ProjectileCollisionSize"	"50"
+	"RingRadius"				"130"
+	"HealthBarOffset"			"260"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"
+	"MovementTurnRate"			"1.0"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1300"
+	"StatusHealthRegen"			"35"
+	"StatusMana"				"0"
+	"StatusStartingMana"		"0"
+	"StatusManaRegen"			"0"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"450"
+	"VisionNighttimeRange"		"450"
+}

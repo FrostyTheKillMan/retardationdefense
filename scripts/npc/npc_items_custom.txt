@@ -1,0 +1,415 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Bag of Gold
+	//=================================================================================================================
+	"item_bag_of_gold"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/gold_bag.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemKillable"					"0"
+	}
+	//=================================================================================================================
+	// Health Potion
+	//=================================================================================================================
+	"item_health_potion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_health_potion"
+		"ScriptFile"					"items/item_health_potion"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/bottle_rejuvenation.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_restore_pct"		"20"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mana Potion
+	//=================================================================================================================
+	"item_mana_potion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_mana_potion"
+		"ScriptFile"					"items/item_mana_potion"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/bottle_mango001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore_pct"		"20"
+			}
+		}
+	}
+	"item_recipe_rapier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"132"
+	
+		"ItemRecipe"					"0"
+	}
+	//=================================================================================================================
+	// Holdout Tombstone
+	//=================================================================================================================
+	"item_tombstone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_tombstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
+		"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
+		"precache"
+		{
+			"particle_folder" "particles/units/heroes/hero_morphling"
+		}
+	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"6.5"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
+		"ItemKillable"					"0"
+	}
+	//=================================================================================================================
+	// Ring of Aquila
+	//=================================================================================================================
+	"item_ring_of_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"212"
+		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"965"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"roa;ring of aquila"
+		"ItemShareability"				""		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ActiveDescriptionLine"			"2"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"11"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"0.75"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"2"
+			}			
+		}		
+	}
+	//=================================================================================================================
+	// Poor Man's Shield
+	//=================================================================================================================
+	"item_poor_mans_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"71"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"agi;block"
+		"ItemQuality"					"common"
+		"ItemAliases"					"pms;poor man's shield"
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+
+		"AbilityCooldown"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_melee"	"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_ranged"	"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"75"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"75"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_block_melee"			"10"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_block_range"			"5"
+			}	
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_block_duration"		"5"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Iron Talon
+	//=================================================================================================================
+	"item_recipe_iron_talon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"125"	
+		"ItemShopTags"					""
+		"IsObsolete"					"1"
+		"ItemPurchasable"				"0"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_iron_talon"
+		"ItemRequirements"
+		{
+			"01"						"item_quelling_blade;item_ring_of_regen"
+		}
+	}
+	
+	//=================================================================================================================
+	// Iron Talon
+	//=================================================================================================================
+	"item_iron_talon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"239"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
+
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"0"
+		"ItemShopTags"					"damage" 
+		"ItemQuality"					"common"
+		"ItemAliases"					"quelling blade"
+		"IsObsolete"					"1"
+		"ItemPurchasable"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus"			"24"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus_ranged"	"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_range_tooltip"			"350"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_ward"			"450"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_pct"			"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"alternative_cooldown"	"4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"350"
+			}
+		}
+	}
+
+}

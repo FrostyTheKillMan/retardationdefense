@@ -1,0 +1,267 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Dark Seer: Vacuum
+	//=================================================================================================================
+	"dark_seer_vacuum"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5255"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Dark_Seer.Vacuum"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450 500 550 600"
+		"AbilityCastPoint"				"0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 50 40 30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 130 160 190"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400 450 500 550"
+				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.3 0.4 0.5 0.6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 50 100 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_tree"				"275"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"	"450 500 550 600"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Dark Seer: Ion Shell
+	//=================================================================================================================
+	"dark_seer_ion_shell"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5256"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Dark_Seer.Ion_Shield_Start"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// just does damage
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"30 50 70 90"
+				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"25"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Dark Seer: Surge
+	//=================================================================================================================
+	"dark_seer_surge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5257"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"  
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Dark_Seer.Surge"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13 12 11 10"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"2.5"	// Value much higher than manacost
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 4.5 6.0 7.5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Dark Seer: Wall of Replica
+	//=================================================================================================================
+	"dark_seer_wall_of_replica"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5258"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Dark_Seer.Wall_of_Replica_Start"
+
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 900 1300"
+		"AbilityCastPoint"				"0.4 0.4 0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100.0 100.0 100.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 250 375"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"45.0"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replica_damage_outgoing"	"-30 -15 0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_outgoing"	"70 85 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replica_damage_incoming"	"100"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_replica_total_damage_incoming"	"200"
+				"CalculateSpellDamageTooltip"	"0"
+			}				
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"1300"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replica_scale"	"0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_tooltip"			"500 900 1300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replica_damage_outgoing_scepter"	"0 20 40"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_outgoing_scepter"	"100 120 140"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"					"75"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"				"0.5 0.75 1.0"
+			}	
+		}
+	}
+}

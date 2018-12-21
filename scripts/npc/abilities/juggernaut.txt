@@ -1,0 +1,217 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Juggernaut Blade Dance
+	//=================================================================================================================
+	"juggernaut_blade_dance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5027"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_chance"	"20 25 30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_dance_crit_mult"		"180"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Ability: Juggernaut Blade Fury
+	//=================================================================================================================
+	"juggernaut_blade_fury"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5028"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0 0 0 0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45 40 35 30 25 20 15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 140 130 120 110 100 90"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"blade_fury_damage_tick"	"0.1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_fury_radius"			"275"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_fury_damage"			"90 115 140 160 185 210 230"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Ability: Juggernaut Healing Ward
+	//=================================================================================================================
+	"juggernaut_healing_ward"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5029"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilitySound"					"Hero_Juggernaut.HealingWard.Cast"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0 60.0 60.0 60.0 60.0 60.0 60.0"
+		"AbilityDuration"				"25.0 25.0 25.0 25.0 25.0 25.0 25.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"healing_ward_heal_amount"	"2 3 4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"healing_ward_aura_radius"	"550"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"healing_ward_movespeed_tooltip"	"440"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"healing_ward_duration_tooltip"		"25"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Ability: Juggernaut Omni Slash
+	//=================================================================================================================
+	"juggernaut_omni_slash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5030"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"130.0 120.0 110.0 100.0 90.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 275 350 425 500"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// damage only
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"omni_slash_damage"			"200 225 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"omni_slash_jumps"			"3 6 9 12 15"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"omni_slash_radius"			"475"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"omni_slash_bounce_tick"	"0.4"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"omni_slash_jumps_scepter"		"6 9 12 15 18"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"omni_slash_cooldown_scepter"	"60.0"
+			}
+		}
+	}
+}

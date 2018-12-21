@@ -1,0 +1,349 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Templar Assassin: Refraction
+	//=================================================================================================================
+	"templar_assassin_refraction"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5194"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_TemplarAssassin.Refraction"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"instances"					"3 4 5 6 7 8 9 10"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"20 40 60 80 100 120 140"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_threshold"			"20 25 30 35 40 45 50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"17.0 17.0 17.0 17.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Templar Assassin: Meld
+	//=================================================================================================================
+	"templar_assassin_meld"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5195"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_TemplarAssassin.Meld"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"
+		"AbilityDuration"				"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 50 50 50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"50 100 150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"-2 -4 -6 -8 -10 -12 -14"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_reduction_duration_tooltip"				"10"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	
+	//=================================================================================================================
+	// Templar Assassin: Psi Blades
+	//=================================================================================================================
+	"templar_assassin_psi_blades"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5196"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_range"		"60 120 180 240 300 360 420"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_spill_range"		"590 630 670 710 750 790 830"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_spill_width"		"75 85 95 105 115 125 135"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}	
+	
+	//=================================================================================================================
+	// Templar Assassin: Psionic Trap
+	//=================================================================================================================
+	"templar_assassin_psionic_trap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5197"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"LevelsBetweenUpgrades"         "6"
+        	"MaxLevel"                      "5"
+		"AbilitySound"					"Hero_TemplarAssassin.Trap"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 11.0 8.0 5.0 3.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"15 15 15"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_traps"					"5 6 7 8 9"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_fade_time"				"2.0 1.5 1.0 0.5 0.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_min"				"15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_max"				"90"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_duration_tooltip"				"5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"				"250 350 450 550 650"
+				"LinkedSpecialBonus"	"special_bonus_unique_templar_assassin_3"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4 3.5 3.0 2.5 2.0"
+			}
+		}
+
+		"AbilityDraftPreAbility"			"templar_assassin_trap"
+	}
+
+	//=================================================================================================================
+	// Templar Assassin: Trap
+	//=================================================================================================================
+	"templar_assassin_trap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5198"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.5"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_radius"				"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_duration"				"5.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"			"250 350 450 550 650"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_min"			"15"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_max"			"90"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4 3.5 3.0 2.5 2.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Templar Assassin: Self Trap
+	//=================================================================================================================
+	"templar_assassin_self_trap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5199"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.5"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_radius"				"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_duration"				"5.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"			"250 350 450 550 650"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_min"			"15"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_max"			"90"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4 3.5 3.0 2.5 2.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+}

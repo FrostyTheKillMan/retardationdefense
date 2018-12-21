@@ -1,0 +1,216 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Silencer: Curse of the silent
+	//=================================================================================================================
+	"silencer_curse_of_the_silent"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5377"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Silencer.Curse.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 18 16 14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 95 115 135"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Mainly about damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"16 24 32 40"
+				"LinkedSpecialBonus"	"special_bonus_unique_silencer"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"425"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"6"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"penalty_duration"			"5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"-9 -12 -15 -18"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
+	
+	//=================================================================================================================
+	// Silencer: Glaives of Wisdom
+	//=================================================================================================================
+	"silencer_glaives_of_wisdom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5378"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilitySound"					"Hero_Silencer.GlaivesOfWisdom"
+		"HasScepterUpgrade"			"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"0.0 0.0 0.0 0.0"
+		"AbilityCastRange"				"600"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"15 15 15 15"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"intellect_damage_pct"	"25 40 55 70"
+				"LinkedSpecialBonus"	"special_bonus_unique_silencer_3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"steal_range"		"925"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Silencer: Last Word
+	//=================================================================================================================
+	"silencer_last_word"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5379"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Silencer.LastWord.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"900"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"28 22 16 10"
+		"AbilityManaCost"				"115"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.3"	// Applies multiple modifiers
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"	"3 4 5 6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Silencer: Global Silence
+	//=================================================================================================================
+	"silencer_global_silence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5380"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Silencer.GlobalSilence.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"130.0"
+		"AbilityDuration"				"4.5 5.25 6.0"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250 375 500"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Hits all units on the map.
+
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_duration"		"4.5 5.25 6.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_silencer_4"
+			}
+		}
+	}
+}

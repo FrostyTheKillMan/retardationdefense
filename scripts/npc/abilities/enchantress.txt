@@ -1,0 +1,198 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Enchantress: Untouchable
+	//=================================================================================================================
+	"enchantress_untouchable"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5267"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed"		"-20 -70 -120 -170"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"4"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Enchantress: Enchant
+	//=================================================================================================================
+	"enchantress_enchant"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5268"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Enchantress.EnchantCreep"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"55 40 25 10"
+		"AbilityDuration"				"3.75 4.5 5.25 6"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65 65 65 65"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dominate_duration"		"50 60 70 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_movement_speed"	"-55"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_duration"		"3.75 4.5 5.25 6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Enchantress: Nature's Attendants
+	//=================================================================================================================
+	"enchantress_natures_attendants"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5269"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Enchantress.NaturesAttendantsCast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+		"AbilityDuration"				"11"
+
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"170 160 150 140"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_interval"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal"					"10.0 10.0 10.0 10.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"275 275 275 275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wisp_count"			"4 6 8 10"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Enchantress: Impetus
+	//=================================================================================================================
+	"enchantress_impetus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5270"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Enchantress.Impetus"
+
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0 0.0 0.0"
+		"AbilityDuration"				"1.5 1.5 1.5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 55 70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance_damage_pct"	"16 20 24"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance_cap"			"1750"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_range_scepter"	"190 190 190"
+			}
+		}
+	}
+}

@@ -1,0 +1,308 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lycan: Summon Wolves
+	//=================================================================================================================
+	"lycan_summon_wolves"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5395"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilitySound"					"Hero_Lycan.SummonWolves"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 30.0 30.0 30.0 30.0 30.0 30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"145"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_index"				"1 2 3 4 4 4 4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_duration"				"55.0 55.0 55.0 55.0 55.0 60.0 65.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_bat"					"1.25 1.2 1.15 1.1 1.05 1.00 0.95"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_damage"				"18 29 37 46 55 64 73"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_hp"					"230 260 290 320 350 380 410"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bash_chance"				"15"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bash_duration"				"1.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_wolf_count"			"2 2 2 2 2 3 4"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Lycan: Howl
+	//=================================================================================================================
+	"lycan_howl"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5396"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilitySound"					"Hero_Lycan.Howl"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 55 50 45 40 35 30"
+		"AbilityDuration"				"13"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"	"5"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"howl_duration"		"13.0"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hero_bonus_damage"	"10 15 20 25 30 35 40"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_bonus_damage"	"4 6 8 10 20 40 80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hero_bonus_hp"			"50 100 150 200 300 400 500"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unit_bonus_hp"			"25 50 75 100 200 400 800"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=====================================================================================================
+	// Lycan: Feral Impulse
+	//=================================================================================================================
+	"lycan_feral_impulse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5397"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900 900 900 900 1000 1100 1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"12 24 36 48 60 72 84"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_regen"		"1 3 5 7 9 11 13"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_3"
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Lycan: Shapeshift
+	//=================================================================================================================
+	"lycan_shapeshift"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5398"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"AbilitySound"					"Hero_Lycan.Shapeshift.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"130 105 80 75 60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 100 100 100 100"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"18"
+				"LinkedSpecialBonus"		"special_bonus_unique_lycan_1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"				"650 650 650 800 1000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_night_vision"		"1000"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"transformation_time"		"1.5"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"150 175 200 250 300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Lycan: Summon Wolves Critical Strike
+	//=================================================================================================================
+	"lycan_summon_wolves_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5399"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"maim_chance"				"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"maim_duration"					"4.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"maim_movement_speed"				"0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"maim_attack_speed"				"60"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"maim_damage"				"8"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Lycan Summon Wolves: Permanent Invisibility
+	//=================================================================================================================
+	"lycan_summon_wolves_invisibility"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5500"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.0 0.0 0.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_delay"				"1.7"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+}

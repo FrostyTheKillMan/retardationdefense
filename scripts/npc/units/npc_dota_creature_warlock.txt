@@ -1,0 +1,168 @@
+//=================================================================================
+// Creature: Warlock
+// Round 6
+//=================================================================================
+"npc_dota_creature_warlock"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/warlock/warlock.vmdl"
+	"SoundSet"					"Hero_Warlock"
+	"Level"						"6"
+	"ModelScale" 				"1.4"
+	"IsNeutralUnitType"			"1"			// need this too?
+	"ConsideredHero"			"1"
+	"IsAncient"					"1"			// warlock's aura doesn't work on ancients, this is how we're keeping it from applying to other warlocks
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"warlock_fatal_bonds"
+	"Ability2"					"warlock_shadow_word"
+	"Ability3"					"warlock_upheaval"
+	"Ability4"					"warlock_hp_aura"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"
+	"MagicalResistance"			"20"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"50"
+	"AttackDamageMax"			"60"
+	"AttackRate"				"1.7"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"600"
+	"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	"ProjectileSpeed"			"800"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"60"
+	"HealthBarOffset"			"170"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SIEGE" // siege gives bigger collision radius, helps with selecting warlocks when they're surrounded
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"155"
+	"BountyGoldMin"				"107"
+	"BountyGoldMax"				"121"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"260"
+	"MovementTurnRate"			"0.4"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1350"
+	"StatusHealthRegen"			"3.0"
+	"StatusMana"				"800"
+	"StatusManaRegen"			"4.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"50.0"
+				"Avoidance"		"0.0"
+				"Support"		"30.0"
+			}
+		}
+
+		"OffensiveAbilities"
+		{
+			//"Ability1"
+			//{
+				//"Name"				"warlock_fatal_bonds"
+				//"AOE"				"1"
+				//"Radius"			"400"
+				//"MinimumTargets"	"2"
+			//}
+			"Ability3"
+			{
+				"Name"				"warlock_upheaval"
+				"AOE"				"1"
+				"Radius"			"700"
+				"MinimumTargets"	"2"
+			}
+		}
+
+		"DefensiveAbilities"
+		{
+			"Ability2"
+			{
+				"Name"					"warlock_shadow_word"
+				"Heal"					"1"
+				"UseSelfishly"			"1"
+			}
+		}
+
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"8"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+			
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"245" // belt: default
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"241" // head: default
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"240" // offhand_weapon: default
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"243" // arms: default
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"244" // back: default
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"242" // shoulder: default
+			}
+			"Wearable7"
+			{
+				"ItemDef"			"239" //"6473" // weapon: Hellborn Grasp
+			}
+		}
+	}
+}

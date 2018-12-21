@@ -1,0 +1,139 @@
+//=================================================================================
+// Creature: Enigma
+// Round 11
+//=================================================================================
+"npc_dota_creature_enigma"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/enigma/enigma.vmdl"
+	"SoundSet"					"Hero_Enigma"
+	"Level"						"1"
+	"ModelScale" 				"1.6"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+	"ConsideredHero"			"1"
+	"IsAncient"					"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"enigma_malefice"
+	"Ability2"					"enigma_demonic_conversion"
+	"Ability3"					"enigma_midnight_pulse"
+	"Ability4"					"enigma_black_hole"
+	"Ability5"					""
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"3"
+	"MagicalResistance"			"20"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"400"
+	"AttackDamageMax"			"500"
+	"AttackRate"				"1.7"
+	"AttackAnimationPoint"		"0.4"
+	"AttackAcquisitionRange"	"800"
+	"AttackRange"				"500"
+	"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack.vpcf"
+	"ProjectileSpeed"			"900"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"90"
+	"HealthBarOffset"			"280"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"440"
+	"MovementTurnRate"			"0.5"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"4500"
+	"StatusHealthRegen"			"5.0"
+	"StatusMana"				"1500"
+	"StatusManaRegen"			"5.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"60.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"enigma_black_hole"
+				"AOE"				"1"
+				"Radius"			"400"
+				"MinimumTargets"	"2"
+			}
+		}
+
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"225"
+		"DamageGain"				"15"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"498"
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"628"
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"629"
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"8326"
+			}
+		}
+	}
+}

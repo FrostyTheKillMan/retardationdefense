@@ -1,0 +1,377 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Shredder: Whirling Death
+	//=================================================================================================================
+	"shredder_whirling_death"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5524"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Shredder.WhirlingDeath.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_radius"			"300 300 350 400 450 500 550"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_damage"			"100 150 200 250 300 350 400"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"whirling_tick"				"0.3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stat_loss_pct"				"15 15 15 15 20 25 30"
+				"LinkedSpecialBonus"		"special_bonus_unique_timbersaw"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"14.0 14.0 14.0 14.0 12.0 10.0 8.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Shredder: Timber Chain
+	//=================================================================================================================
+	"shredder_timber_chain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5525"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Shredder.TimberChain.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"850 1050 1250 1450 1650 1850 2050"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 70 80 90 100 110 120"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chain_radius"		"90 90 90 90 90 90 90"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"850 1050 1250 1450 1650 1850 2050"
+				"LinkedSpecialBonus"	"special_bonus_unique_timbersaw_3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"		"225 225 225 225 250 275 300"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1600 2000 2400 2800 3000 3200 3400"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 140 180 220 260 300 340"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Shredder: Reactive Armor
+	//=================================================================================================================
+	"shredder_reactive_armor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5526"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_armor"						"1.3 1.4 1.5 1.6 1.7 1.8 2.0"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_hp_regen"							"1 1.15 1.3 1.45 1.6 1.75 2.0"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"stack_limit"						"5 10 15 20 25 30 35"
+				"LinkedSpecialBonus"				"special_bonus_unique_timbersaw_2"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"stack_duration"					"10 13 16 19 22 25 28"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Shredder: Chakram
+	//=================================================================================================================
+	"shredder_chakram"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5527"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 140 200 260 320"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0 200.0 200.0 250.0 300.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 220 260"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"50 75 100 125 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 37 44"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shredder: Chakram 2
+	//=================================================================================================================
+	"shredder_chakram_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5645"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"3"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 140 200 260 320"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0 200.0 200.0 250.0 300.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 220 260"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"50 75 100 125 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 37 44"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shredder: Return Chakram
+	//=================================================================================================================
+	"shredder_return_chakram"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5528"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0 0.0 0.0"
+	}
+
+	//=================================================================================================================
+	// Shredder: Return Chakram
+	//=================================================================================================================
+	"shredder_return_chakram_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5646"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"		
+		"MaxLevel"						"3"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0 0.0 0.0"
+	}
+}

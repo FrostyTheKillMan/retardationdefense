@@ -1,0 +1,154 @@
+"npc_dota_creature_lifestealer"
+{
+	// General
+	//----------------------------------------------------------------
+	
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"					"models/heroes/life_stealer/life_stealer.vmdl"
+	"SoundSet"						"Hero_LifeStealer"				// Name of sound set.
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1.1"
+	"ConsideredHero"			"1"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creature_rage"			// Ability 1.
+	"Ability2"					"creature_feast"			// Ability 2.
+	"Ability3"					"creature_infest"			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"25"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"175"		// Damage range min.
+	"AttackDamageMax"			"200"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.0"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+	"AttackRange"				"150"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_venomancer/venomancer_plague_ward_projectile.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1900"		// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
+	"HealthBarOffset"			"200"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"400"		// Speed."			// Type of locomotion - ground, air
+	"MovementTurnRate"			"1.0"		// Turning rate.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"35"		// Experience earn.
+	"BountyGoldMin"				"14"		// Gold earned min.
+	"BountyGoldMax"				"17"		// Gold earned max.
+
+		// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1500"		// Base health.
+	"StatusHealthRegen"			"5"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"5"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	//Inventory
+	"HasInventory"				"0"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"				"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+				"RoamDistance"		"300.0"
+			}
+		}
+
+		//Level Up
+		"HPGain"					"35"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"HPRegenGain"				"1"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"3"
+		"BountyGain"				"5"
+		"XPGain"					"25"
+
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"					"creature_rage"
+				"AOE"					"1"
+				"Radius"				"400"
+			}
+		}
+		
+		"DefensiveAbilities"
+		{
+			"Ability3"
+			{
+				"Name"					"creature_infest"
+				"Heal"					"1"
+				"UseOnStrongestAlly" 	"1"
+				//"UseAtHealthPercent"	"30"
+			}	
+		}
+		
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"530"
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"8659"
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"443"
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"444"
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"8658"
+			}
+		}
+	}
+}

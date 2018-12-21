@@ -1,0 +1,12 @@
+//=================================================================================================================
+// HERO: Abyssal Underlord
+//=================================================================================================================
+"npc_dota_hero_abyssal_underlord"
+{
+	"overrider_hero"		"npc_dota_hero_abyssal_underlord"
+	
+	"Ability3"				"abyssal_underlord_expulsion"
+	"Ability4"				"abyssal_underlord_rifts_edge"
+	"Ability5"				"abyssal_underlord_atrophy_aura"
+	
+}

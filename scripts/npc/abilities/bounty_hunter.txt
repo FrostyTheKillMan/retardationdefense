@@ -1,0 +1,237 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Bounty Hunter: Shuriken Toss
+	//=================================================================================================================
+	"bounty_hunter_shuriken_toss"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5285"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_BountyHunter.Shuriken"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"150"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// just a mini stun
+
+		"HasScepterUpgrade"				"1"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"150 225 300 375"
+				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000 1000 1000 1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_aoe"			"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ministun"			"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_ministun"			"0.75"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Bounty Hunter: Jinada
+	//=================================================================================================================
+	"bounty_hunter_jinada"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5286"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_BountyHunter.Jinada"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 10.0 8.0 6.0"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"150 175 200 225"
+				"LinkedSpecialBonus"		"special_bonus_unique_bounty_hunter"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"-15 -20 -25 -30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attackspeed"		"-15 -20 -25 -30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 3.0 3.0 3.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}	
+
+	//=================================================================================================================
+	// Bounty Hunter: Wind Walk
+	//=================================================================================================================
+	"bounty_hunter_wind_walk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5287"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySound"					"Hero_BountyHunter.WindWalk"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0 15.0 15.0 15.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0 25.0 30.0 35.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"1.0 0.75 0.5 0.25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"30 60 90 120"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Bounty Hunter: Track
+	//=================================================================================================================
+	"bounty_hunter_track"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5288"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_BountyHunter.Target"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"65"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900 900 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_move_speed_pct"	"16 18 20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_radius"		"925 925 925"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_self"		"150 250 350"
+				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"40 80 120"
+				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30.0 30.0 30.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"			"1200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gold_steal"			"0.3 0.4 0.5"
+			}
+		}
+	}
+}

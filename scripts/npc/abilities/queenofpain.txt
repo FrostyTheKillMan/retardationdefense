@@ -1,0 +1,235 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Queen of Pain: Shadow Strike
+	//=================================================================================================================
+	"queenofpain_shadow_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5173"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_QueenOfPain.ShadowStrike"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450 500 550 600"
+		"AbilityCastPoint"				"0.4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
+		"AbilityDuration"				"15.0 15.0 15.0 15.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+	
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_damage"			"50 75 100 125"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_damage"		"30 45 60 75"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-20 -30 -40 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"		"450 500 550 600"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_tooltip"		"15"
+			}			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Queen of Pain: Blink
+	//=================================================================================================================
+	"queenofpain_blink"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5174"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilitySound"					"Hero_QueenOfPain.Blink_in"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.33 0.33 0.33 0.33"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0 12.0 9.0 6.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 60 60 60"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"1300"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_blink_range"		"200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	
+	//=================================================================================================================
+	// Queen of Pain: Scream of Pain
+	//=================================================================================================================
+	"queenofpain_scream_of_pain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5175"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_QueenOfPain.ScreamOfPain"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0 7.0 7.0 7.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"75 150 225 300"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 120 130 140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"475"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Queen of Pain: Sonic Wave
+	//=================================================================================================================
+	"queenofpain_sonic_wave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5176"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"				   
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_QueenOfPain.SonicWave"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.452 0.452 0.452"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"135 135 135"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250 360 500"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"starting_aoe"		"100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"distance"			"900"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"final_aoe"			"450"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"900"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"320 410 500"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_scepter"	"40"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_scepter"	"370 480 590"
+			}
+		}
+	}
+}

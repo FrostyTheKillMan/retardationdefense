@@ -1,0 +1,324 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Pangolier: Swashbuckle
+	//=================================================================================================================
+	"pangolier_swashbuckle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6344"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"1000"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18 16 14 12 10 8 6"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110 120 130 140"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_range"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"42 49 56 63 70 77 84"
+				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.28 0.24 0.2 0.16 0.12 0.08 0.04"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"125"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"125"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strikes"				"2 3 4 5 6 7 8 "
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Pangolier: Shield Crash
+	//=================================================================================================================
+	"pangolier_shield_crash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6461"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19 17 15 13 11 9 7"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 150 225 300 375 450 525"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hero_stacks"				"5 8 11 14 17 20 23"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_duration"				"0.4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"jump_duration_gyroshell"		"0.75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_height"				"250"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_height_gyroshell"			"350"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_horizontal_distance"		"225"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Pangolier: Heartpiercer
+	//=================================================================================================================
+	"pangolier_heartpiercer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6346"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 3 4 5 6 7 8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"-5 -10 -15 -20 -25 -30 -35 "
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_delay"				"2.4 2.0 1.6 1.2 0.8 0.4 0.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Pangolier: Gyroshell
+	//=================================================================================================================
+	"pangolier_gyroshell"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6343"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"1.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"325 500 675 850 1025"
+
+        "precache"
+		{
+			"model" "models/heroes/pangolier/pangolier_gyroshell.vmdl"
+			"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time_tooltip"		"1.2"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"0.05"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"forward_move_speed"	"600 625 650 675 700"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT" // used after any break in the roll (start/jump/bounce)
+				"turn_rate_boosted"			"165 175 185 195 205"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"turn_rate"				"120 130 140 150 160"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hit_radius"				"150"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounce_duration"			"0.4"
+			}			
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"				"0.75 1.0 1.25 1.5 1.75"
+			}			
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_radius"		"150"
+			}			
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_6"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_recover_time"		"0.25"
+			}			
+		}
+	}
+
+	//=================================================================================================================
+	// Pangolier: Gyroshell Stop
+	//=================================================================================================================
+	"pangolier_gyroshell_stop"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6459"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+	}
+}

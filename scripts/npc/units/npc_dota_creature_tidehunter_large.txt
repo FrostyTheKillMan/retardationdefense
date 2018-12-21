@@ -1,0 +1,166 @@
+//=================================================================================
+// Creature: Tidehunter Large
+// Round 7
+//=================================================================================
+"npc_dota_creature_tidehunter_large"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/tidehunter/tidehunter.vmdl"
+	"SoundSet"					"Hero_Tidehunter"
+	"Level"						"1"
+	"ModelScale" 				"2.0"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+	"ConsideredHero"			"1"
+	"IsAncient"					"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creature_tidehunter_gush"
+	"Ability2"					"tidehunter_kraken_shell"
+	"Ability3"					"tidehunter_anchor_smash"
+	"Ability4"					"tidehunter_ravage"
+	"Ability5"					""
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"10"
+	"MagicalResistance"			"20"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"450"
+	"AttackDamageMax"			"500"
+	"AttackRate"				"1.5"
+	"AttackAnimationPoint"		"0.6"
+	"AttackAcquisitionRange"	"700"
+	"AttackRange"				"150"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			""
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"300"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"375"
+	"MovementTurnRate"			"0.4"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"8000"
+	"StatusHealthRegen"			"10"
+	"StatusMana"				"2000"
+	"StatusManaRegen"			"10.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"1"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"60.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creature_tidehunter_gush"
+				"Linear"			"1"
+				"AOE"				"1"
+				"Radius"			"100"
+				"MinimumTargets"	"1"
+			}
+			"Ability4"
+			{
+				"Name"				"tidehunter_ravage"
+				"AOE"				"1"
+				"Radius"			"900"
+				"MinimumTargets"	"3"
+			}
+		}
+
+		"EquippedItems"
+		{
+			"UltimateScepter"
+			{
+				"Item"					"item_ultimate_scepter"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"150"
+		"DamageGain"				"30"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"34" // arms: default
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"35" // belt: default
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"7469" // weapon: Claddish Cudgel
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"37" // offhand_weapon: default
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"4092" // back: kraken shell
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"4093" // head: octopus hat
+			}
+		}
+	}
+}

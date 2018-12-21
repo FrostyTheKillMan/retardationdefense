@@ -1,0 +1,162 @@
+//=================================================================================
+// Round9 Creature: Meepo
+//=================================================================================
+"npc_dota_creature_meepo"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/meepo/meepo.mdl"	// Model.
+	"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
+	"ModelScale" 				"1"
+	"Level"						"1"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					"creature_earthbind"			// Ability 1.
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"50"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"40"		// Damage range min.
+	"AttackDamageMax"			"57"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.
+
+	// Attributes
+	//----------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"0"			// Base strength
+	"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"			// Base intelligence
+	"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"			// Base agility
+	"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"84"		// Experience earn.
+	"BountyGoldMin"				"38"		// Gold earned min.
+	"BountyGoldMax"				"72"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"45"
+	"HealthBarOffset"			"130"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"260"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"750"		// Base health.
+	"StatusHealthRegen"			"1.5"		// Health regeneration rate.
+	"StatusMana"				"500"		// Base mana.
+	"StatusManaRegen"			"4"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"850"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	"ParticleFile"				"particles/units/heroes/hero_meepo.pcf"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_meepo.vsndevts"
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"50.0"
+				"Avoidance"		"0.0"
+				"Support"		"30.0"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"				
+			{
+				"Name"				"creature_earthbind"
+				"AOE"				"1"
+				"Radius"			"225"
+				"MinimumTargets"	"1"
+			}
+		}
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"104" // weapon: default
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"297" // back: default
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"296" // head: default
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"298" // shoulder: default
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"299" // arms: default
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"300" // tail: default
+			}
+		}
+	}
+}

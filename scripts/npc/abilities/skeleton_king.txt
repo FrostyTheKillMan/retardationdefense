@@ -1,0 +1,255 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Skeleton King
+	//=================================================================================================================
+	"skeleton_king_hellfire_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5086"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_SkeletonKing.Hellfire_Blast"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"525"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.35 0.35"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"11 10 9 8 7 6 5"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"50 100 150 200 250 300 350"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"95 110 125 140 155 170 185"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"1000"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_stun_duration"	"2.0"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_slow_duration"	"2"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_slow"			"-20"
+			}
+			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_dot_duration"	"4"
+			}
+			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_dot_damage"		"20 35 50 65 90 105 120"
+				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_3"
+			}
+			
+			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Ability: Skeleton King Vampiric Aura
+	//=================================================================================================================
+	"skeleton_king_vampiric_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5087"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura_radius"	"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura"			"18 22 26 30 34 38 42"
+				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+		
+	//=================================================================================================================
+	// Ability: Skeleton King Mortal Strike
+	//=================================================================================================================
+	"skeleton_king_mortal_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5088"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilitySound"					"Hero_SkeletonKing.CriticalStrike"
+
+			
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30 45 60 75 90 105 120"
+
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_mult"					"150 200 250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"7 8 9 10 11 12 13"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"skeleton_duration"			"90"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_skeleton_charges"		"2 4 6 8 10 12 14"
+				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spawn_interval"			"0.25 0.25 0.25 0.25 0.15 0.1 0.05"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Ability: Skeleton King Reincarnation
+	//=================================================================================================================
+	"skeleton_king_reincarnation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5089"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_SkeletonKing.Reincarnate"
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"160"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"140 120 100 80 60"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reincarnate_time"		"3.0 3.0 3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_radius"			"900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"				"-75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackslow_tooltip"	"-75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"5.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_duration"		"7"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"	"1200"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius_tooltip_scepter"	"1200"
+			}
+		}
+	}
+}

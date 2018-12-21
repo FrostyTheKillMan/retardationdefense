@@ -1,0 +1,103 @@
+//=================================================================================
+// Creature: Morphling Small
+// ROUND 4
+//=================================================================================
+"npc_dota_creature_morphling_small"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/morphling/morphling.vmdl"
+	"SoundSet"					"Hero_Morphling"
+	"Level"						"1"
+	"ModelScale" 				"0.7"
+	"IsNeutralUnitType"			"1"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"40"
+	"AttackDamageMax"			"45"
+	"AttackRate"				"1.4"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"300"
+	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	"ProjectileSpeed"			"1300"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"100"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"430"
+	"StatusHealthRegen"			"1"
+	"StatusMana"				"400"
+	"StatusManaRegen"			"1.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"100.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+	}
+}

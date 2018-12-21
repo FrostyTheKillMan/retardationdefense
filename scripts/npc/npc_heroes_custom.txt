@@ -1,0 +1,111 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Abyssal Underlord
+	//=================================================================================================================
+	"npc_dota_hero_abyssal_underlord"
+	{
+		"overrider_hero"		"npc_dota_hero_abyssal_underlord"
+		
+		"Ability3"				"abyssal_underlord_expulsion"
+		"Ability4"				"abyssal_underlord_rifts_edge"
+		"Ability5"				"abyssal_underlord_atrophy_aura"
+		
+	}
+	//=================================================================================================================
+	// HERO: Faceless Void
+	//=================================================================================================================
+	"npc_dota_hero_faceless_void"
+	{
+		"overrider_hero"		"npc_dota_hero_faceless_void"
+		
+		"Ability4"				"faceless_void_time_breaker"
+	
+		
+	}
+	//=================================================================================================================
+	// HERO: Huskar
+	//=================================================================================================================
+	"npc_dota_hero_huskar"
+	{
+		"overrider_hero"		"npc_dota_hero_huskar"
+		"Ability3"				"huskar_inner_vitality"
+		"Ability4"				"huskar_berserkers_blood"
+		"Ability5"				"huskar_berserk"
+	}
+	//=================================================================================================================
+	// HERO: Necrolyte
+	//=================================================================================================================
+	"npc_dota_hero_necrolyte"
+	{
+		"overrider_hero"		"npc_dota_hero_necrolyte"
+		"Ability1"				"necrolyte_death_pulse_datadriven"
+		"Ability2"				"necrolyte_sadist"
+		"Ability3"				"necrolyte_sadist_datadriven"
+		"Ability4"				"necrolyte_heartstopper_aura_datadriven"
+		"Ability5"				"necrolyte_graveyard_datadriven"
+		"Ability6"				"necrolyte_reapers_scythe_datadriven"
+		"Ability10"				"special_bonus_unique_necrophos"
+		"Ability11"				"special_bonus_unique_necrophos_2"						
+		"Ability12"				"special_bonus_unique_necrophos_3"
+		"Ability13"				"special_bonus_unique_necrophos_4"
+		"Ability14"				"special_bonus_unique_necrophos_5"
+		"Ability15"				"special_bonus_unique_necrophos_6"
+		"Ability16"				"special_bonus_unique_necrophos_7"
+		"Ability17"				"special_bonus_unique_necrophos_8"
+	}
+	//=================================================================================================================
+	// HERO: Ogre Magi
+	//=================================================================================================================
+	"npc_dota_hero_ogre_magi"
+	{
+		"overrider_hero"		"npc_dota_hero_ogre_magi"
+		"Ability1"				"ogre_magi_fireblast_datadriven"
+		"Ability2"				"ogre_magi_ignite_datadriven"
+		"Ability3"				"ogre_magi_bloodlust_datadriven"
+		"Ability4"				"ogre_magi_lightning_shield"
+		"Ability5"				"ogre_magi_unrefined_fireblast"
+		"Ability6"				"ogre_magi_multicast_datadriven"
+	}
+	//=================================================================================================================
+	// HERO: Pudge
+	//=================================================================================================================
+	"npc_dota_hero_pudge"
+	{
+		"overrider_hero"		"npc_dota_hero_pudge"
+		"Ability1"				"pudge_meat_hook_lua"
+		"Ability2"				"pudge_rot_lua"
+		"Ability3"				"pudge_flesh_heap_datadriven"
+		"Ability6"				"pudge_dismember_lua"
+		"Ability10"				"special_bonus_unique_pudge_1"
+		"Ability11"				"special_bonus_unique_pudge_2"						
+		"Ability12"				"special_bonus_unique_pudge_3"
+		"Ability13"				"special_bonus_unique_pudge_4"
+		"Ability14"				"special_bonus_unique_pudge_5"
+		"Ability15"				"special_bonus_unique_pudge_6"
+		"Ability16"				"special_bonus_unique_pudge_7"
+		"Ability17"				"special_bonus_unique_pudge_8"
+	}
+	//=================================================================================================================
+	// HERO: Silencer
+	//=================================================================================================================
+	"npc_dota_hero_silencer"
+	{
+		"overrider_hero"		"npc_dota_hero_ogre_magi"
+		"Ability1"				"silencer_curse_of_the_silent_datadriven"
+		"Ability2"				"silencer_glaives_of_wisdom_datadriven"
+		"Ability3"				"silencer_last_word_datadriven"
+		"Ability4"				"silencer_intel_steal_datadriven"
+		"Ability6"				"silencer_global_silence_datadriven"
+		"Ability7"				"silencer_glaives_of_wisdom"
+		"Ability10"				"special_bonus_unique_silencer"
+		"Ability11"				"special_bonus_unique_silencer_2"						
+		"Ability12"				"special_bonus_unique_silencer_3"
+		"Ability13"				"special_bonus_unique_silencer_4"
+		"Ability14"				"special_bonus_unique_silencer_5"
+		"Ability15"				"special_bonus_unique_silencer_6"
+		"Ability16"				"special_bonus_unique_silencer_7"
+		"Ability17"				"special_bonus_unique_silencer_8"
+	}
+	
+}

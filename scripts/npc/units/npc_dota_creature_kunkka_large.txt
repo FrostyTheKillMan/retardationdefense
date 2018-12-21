@@ -1,0 +1,160 @@
+//=================================================================================
+// Creature: Kunkka Large
+// Round 7
+//=================================================================================
+"npc_dota_creature_kunkka_large"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/kunkka/kunkka.vmdl"
+	"SoundSet"					"n_creep_Melee"
+	"Level"						"1"
+	"ModelScale" 				"1.8"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+	"ConsideredHero"			"1"
+	"IsAncient"					"1"		
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"kunkka_torrent_dm"
+	"Ability2"					"life_stealer_empty_1"
+	"Ability3"					"kunkka_x_marks_the_spot"
+	"Ability4"					"kunkka_ghostship"
+	"Ability5"					""
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"7"
+	"MagicalResistance"			"20"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"500"
+	"AttackDamageMax"			"550"
+	"AttackRate"				"1.5"
+	"AttackAnimationPoint"		"0.4"
+	"AttackAcquisitionRange"	"700"
+	"AttackRange"				"100"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			""
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"140"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"385"
+	"MovementTurnRate"			"0.6"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"2600"
+	"StatusHealthRegen"			"3.0"
+	"StatusMana"				"1400"
+	"StatusManaRegen"			"5.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"60.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"kunkka_torrent_dm"
+				"AOE"				"1"
+				"Radius"			"200"
+				"MinimumTargets"	"1"
+			}
+
+			"Ability3"
+			{
+				"Name"				"kunkka_x_marks_the_spot"
+			}
+
+			"Ability4"
+			{
+				"Name"				"kunkka_ghostship"
+				"AOE"				"1"
+				"Radius"			"300"
+				"MinimumTargets"	"2"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"100"
+		"DamageGain"				"10"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"4011" // legs: pegleg
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"11" // gloves
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"12" // sword
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"4017" // head: bicorne
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"81" // belt: spyglass
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"357" // shoulder
+			}
+		}
+	}
+}

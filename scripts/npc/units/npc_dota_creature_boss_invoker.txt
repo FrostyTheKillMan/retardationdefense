@@ -1,0 +1,167 @@
+//=================================================================================
+// BOSS INVOKER
+// Round 15
+//=================================================================================
+"npc_dota_creature_boss_invoker"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/invoker/invoker.vmdl"
+	"SoundSet"					"Hero_Invoker"
+	"Level"						"99"
+	"ModelScale" 				"2.0"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	"ConsideredHero"			"1"
+	"vscripts"					"ai/boss_invoker_ai.lua"
+	"HasInventory"				"1"
+	"UsesConstantGesture"		"1"
+	"IsAncient"					"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"6"
+	"Ability1"		"invoker_quas"
+	"Ability2"		"invoker_wex"
+	"Ability3"		"invoker_exort"
+	"Ability4"		"invoker_empty1"
+	"Ability5"		"invoker_empty2"
+	"Ability6"		"invoker_invoke"
+	"Ability7"		"invoker_cold_snap"
+	"Ability8"		"invoker_ghost_walk"
+	"Ability9"		"invoker_tornado"
+	"Ability10"		"invoker_emp"
+	"Ability11"		"invoker_alacrity"
+	"Ability12"		"invoker_chaos_meteor"
+	"Ability13"		"invoker_sun_strike"
+	"Ability14"		"invoker_forge_spirit"
+	"Ability15"		"invoker_ice_wall"
+	"Ability16"		"invoker_deafening_blast"		
+	"Ability17"		"invoker_dark_moon_ghost_walk"
+	"Ability18"		"special_bonus_unique_invoker_1"
+	"Ability19"		"special_bonus_unique_invoker_2"
+	"Ability20"		"ancient_apparition_ice_blast"
+	"Ability21"		""
+	"Ability22"		""
+	"Ability23"		""
+	"Ability24"		""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"60"
+	"MagicalResistance"			"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"1000"
+	"AttackDamageMax"			"1100"
+	"AttackRate"				"1.2"
+	"AttackAnimationPoint"		"0.4"
+	"AttackAcquisitionRange"	"800"
+	"AttackRange"				"700"
+	"ProjectileModel"			"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+	"ProjectileSpeed"			"900"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+	"RingRadius"				"70"
+	"HealthBarOffset"			"500"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"400"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"100000"
+	"StatusHealthRegen"			"20"
+	"StatusMana"				"65000"
+	"StatusManaRegen"			"1000.0"
+	
+	// Minimap
+	//----------------------------------------------------------------
+	"MinimapIcon"				"minimap_roshancamp"
+	"MinimapIconSize"			"650"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"8000"
+	"VisionNighttimeRange"		"8000"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"EquippedItems"
+		{
+			"Travels"
+			{
+				"Item"					"item_cyclone"
+			}
+			"Blink"
+			{
+				"Item"					"item_blink"
+			}
+			"Octarine"
+			{
+				"Item"					"item_octarine_core"
+			}
+			"Aghanims"
+			{
+				"Item"					"item_ultimate_scepter"
+			}
+			"Hex"
+			{
+				"Item"					"item_sheepstick"
+			}
+			"Sphere"
+			{
+				"Item"					"item_sphere"
+			}
+		}
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"8746" 
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"7989" 
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"7988"
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"7979"
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"7987"
+			}
+			"Wearable6"
+			{
+				"ItemDef"			"98"
+			}
+		}
+	}
+}

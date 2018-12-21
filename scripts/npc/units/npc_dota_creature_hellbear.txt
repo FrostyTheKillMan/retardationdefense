@@ -1,0 +1,103 @@
+//=================================================================================
+// Creature: Hellbear
+// ROUND 3
+//=================================================================================
+"npc_dota_creature_hellbear"
+{										
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl"
+	"SoundSet"					"n_creep_Melee"
+	"Level"						"1"
+	"ModelScale" 				".60"
+	"IsNeutralUnitType"			"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"
+	"MagicalResistance"			"10"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"55"
+	"AttackDamageMax"			"60"
+	"AttackRate"				"1.5"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"100"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			"0"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"50"
+	"HealthBarOffset"			"180"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"88"
+	"BountyGoldMin"				"45"
+	"BountyGoldMax"				"55"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"330"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"370"
+	"StatusHealthRegen"			"0.5"
+	"StatusMana"				"0"
+	"StatusManaRegen"			"1.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"50.0"
+				"Avoidance"		"0.0"
+				"Support"		"30.0"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+	}
+}

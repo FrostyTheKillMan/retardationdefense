@@ -1,0 +1,73 @@
+//=================================================================================
+// Techies Land Mine
+// Round 11
+//=================================================================================
+"npc_dota_creature_techies_land_mine"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/techies/fx_techiesfx_mine.vmdl"
+	"BaseClass"					"npc_dota_techies_mines"
+	"SoundSet"					"0"
+	"Level"						"1"
+	"ModelScale"				"1.0"
+	"SelectionGroup"			"Techies_LandMines"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+ 		"wearable"					"8644"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"0"
+	"AttackDamageMax"			"0"
+	"AttackRate"				"1.0"
+	"AttackAnimationPoint"		"0.0"
+	"AttackAcquisitionRange"	"0"
+	"AttackRange"				"0"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			"0"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"HealthBarOffset"			"140"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"
+	"BountyGoldMin"				"0"
+	"BountyGoldMax"				"0"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"0"
+	"MovementTurnRate"			"0"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1"
+	"StatusHealthRegen"			"0.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"64"
+	"VisionNighttimeRange"		"64"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+}

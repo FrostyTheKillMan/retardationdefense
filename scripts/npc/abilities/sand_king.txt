@@ -1,0 +1,268 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Sand King Burrowsrike
+	//=================================================================================================================
+	"sandking_burrowstrike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5102"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Ability.SandKing_BurrowStrike"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350 450 550 650 750 850 950"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 120 130 140 150 160 170"
+		
+		"AbilityDamage"					"85 150 215 280 345 410 475"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_width"		"150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"burrow_duration"	"1.9 2.0 2.1 2.2 2.3 2.4 2.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_speed"		"2000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"burrow_anim_time"	"0.52"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_range"		"350 450 550 650 750 850 950"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range_scepter"		"700 900 1100 1300 1500 1700 1900"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_speed_scepter"		"3000"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Ability: Sand King Sand Storm
+	//=================================================================================================================
+	"sandking_sand_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5103"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.SandKing_SandStorm.start"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityDuration"				"50"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 55 50 45 40 35 20"
+		"AbilityChannelTime"			"50"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 50 40 30 20 10 0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sand_storm_invis_delay"	"0.9 1.1 1.3 1.5 1.7 1.9 2.1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sand_storm_radius"		"525"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"AbilityDuration"		"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sand_storm_damage"		"40 60 80 100 120 140 160"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	
+	//=================================================================================================================
+	// Ability: Sand King Caustic Finale
+	//=================================================================================================================
+	"sandking_caustic_finale"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5104"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.SandKing_CausticFinale"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"caustic_finale_radius"		"400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"caustic_finale_damage"		"90 130 170 220 270 320"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"caustic_finale_damage_expire"		"20 50 80 110 140 170 200"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"caustic_finale_duration"	"6"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"caustic_finale_slow"		"-15 -20 -25 -30 -35 -40 -55"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"caustic_finale_slow_duration"		"3"
+			}		
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"caustic_finale_expire_dmg_pct_tooltip"		"50"
+			}				
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Ability: Sand King Epicenter
+	//=================================================================================================================
+	"sandking_epicenter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5105"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.SandKing_Epicenter"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100 90 80"
+		"AbilityDuration"				"3.0 3.0 3.0 3.0 3.0"
+		"AbilityChannelTime"			"2.0 2.0 2.0 1.8 1.6"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 225 300 475 625"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_radius"	"275 325 375 425 475 525 575 650 675 700 725 750 775 800"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_pulses"	"6 8 10 12 14"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_damage"	"110 110 110 110 125"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_slow"	"-30 -30 -30 -30 -45"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_slow_as"		"-30"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_3"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_slow_duration_tooltip"	"3"
+			}			
+		}
+	}
+}

@@ -1,0 +1,255 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Necrolyte: Death Pulse
+	//=================================================================================================================
+	"necrolyte_death_pulse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5158"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Necrolyte.DeathPulse"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9 8 7 6 5 4 3"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 140 180 220 260 300 340"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 130 160 190 220 250 280"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"475"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"60 80 100 120 140 160 180"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"400"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"health_regen"	"2 3 4 5 6 7 8"
+			}		
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"mana_regen"	"2.25 2.5 2.75 3 3.25 3.5 3.75"
+			}	
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"regen_duration"		"7"
+			}			
+			"07"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hero_multiplier" "6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Ability: Necrolyte's Heartstopper Aura
+	//=================================================================================================================
+	"necrolyte_heartstopper_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5159"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+				
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900 1200 1500 1800 2100 2400 2700"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"			"900 1200 1500 1800 2100 2400 2700"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"0.4 0.5 0.6 0.7 0.8 0.9 1.0" 
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_2"
+			} 	
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Ability: Necrolyte's Sadist
+	//=================================================================================================================
+	"necrolyte_sadist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5160"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilitySound"					"Hero_Necrolyte.SpiritForm.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32 28 24 20 16 12 8"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"3 3.5 4 4.5 5.0 5.5 6.0"
+			}				
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_bonus"			"75 85 95 105 115 130 145"
+				"LinkedSpecialBonus"	"special_bonus_unique_necrophos"
+			}			
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"movement_speed"			"6 9 12 15 18 21 24"
+			}			
+			"04"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"slow_aoe"		"750"
+			}		
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_damage" 		"-40"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+		
+	//=================================================================================================================
+	// Aether Form Stop
+	//=================================================================================================================
+	"necrolyte_sadist_stop"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6316"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+	}
+
+
+	//=================================================================================================================
+	// Ability: Necrolyte's Reaper's Scythe
+	//=================================================================================================================
+	"necrolyte_reapers_scythe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5161"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "6"
+        	"MaxLevel"                      "5"
+		"AbilitySound"					"Hero_Necrolyte.ReapersScythe.Target"
+
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.55"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 350 500 650 800"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_health"			"0.5 0.6 0.7 0.8 0.9"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5 1.75 2.0 2.25 2.5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"60 50 40 30 20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"respawn_constant"			"15 30 45 60 75"
+			}
+		}
+	}
+}

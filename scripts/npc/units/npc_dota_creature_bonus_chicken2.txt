@@ -1,0 +1,94 @@
+//=================================================================================
+// Creature: Bonus Chicken
+// Round 10
+//=================================================================================
+"npc_dota_creature_bonus_chicken2"
+{										
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/props_gameplay/chicken.vmdl"
+	"SoundSet"					"n_creep_Melee"
+	"Level"						"1"
+	"ModelScale" 				"0.6"
+	"IsNeutralUnitType"			"1"
+	"IsAncient"					"1"
+	"HasInventory"				"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creature_bonus_chicken"
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"22"
+	"AttackDamageMax"			"24"
+	"AttackRate"				"1.45"
+	"AttackAnimationPoint"		"0.33"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"100"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			"0"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"45"
+	"HealthBarOffset"			"110"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"62"
+	"BountyGoldMin"				"22"
+	"BountyGoldMax"				"26"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"500"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1"
+	"StatusHealthRegen"			"0.5"
+	"StatusMana"				"200"
+	"StatusManaRegen"			"1"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+	//	"Aggression"				"50.0"
+	//	"Avoidance"					"0.0"
+	//	"Support"					"30.0"
+	//	"CanRespawn"				"0"
+		
+		//Level Up
+		"HPGain"					"45"
+		"DamageGain"				"2"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"2"
+		"XPGain"					"13"
+	}
+}

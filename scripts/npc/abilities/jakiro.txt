@@ -1,0 +1,306 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Jakiro's Dual Breath
+	//=================================================================================================================
+	"jakiro_dual_breath"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5297"								// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Jakiro.DualBreath"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10.0 10.0 10.0 10.0"
+		"AbilityDuration"				"5.0"
+
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"135 140 155 170"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.25"	// Applies two modifiers 
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"225"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"275"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"750 750 750 750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1050"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_delay"			"0.3 0.3 0.3 0.3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_damage"			"20 40 60 80"
+				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_2"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_movement_speed_pct"	"-28 -32 -36 -40"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_attack_speed_pct"		"-28 -32 -36 -40"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_duration"		"5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_fire"			"1050"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Ability: Jakiro's Ice Path
+	//=================================================================================================================
+	"jakiro_ice_path"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5298"									// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Jakiro.IcePath"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.65"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 11.0 10.0 9.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"path_delay"				"0.5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"1 1.5 2.0 2.5"
+				"LinkedSpecialBonus"		"special_bonus_unique_jakiro"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"path_radius"				"150"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"50"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Ability: Jakiro's Liquid Fire
+	//=================================================================================================================
+	"jakiro_liquid_fire"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5299"											// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Jakiro.LiquidFire"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 15 10 4"
+		"AbilityDuration"				"5.0 5.0 5.0 5.0"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"35"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed_pct" 		"-30 -40 -50 -60"
+				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"12 16 20 24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_duration"			"5 5 5 5"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Ability: Jakiro's Macropyre
+	//=================================================================================================================
+	"jakiro_macropyre"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5300"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Jakiro.Macropyre.Cast"
+
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.55"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 60 60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"220 330 440"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100 140 180"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"1400"					
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"path_radius"				"260"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_duration"			"10"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"			"10"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"burn_interval"				"0.5 0.5 0.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"125 175 225"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter"		"1800"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration_scepter"			"30"
+			}
+		}	
+	}
+}

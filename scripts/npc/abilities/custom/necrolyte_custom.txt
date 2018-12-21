@@ -1,0 +1,859 @@
+"DOTAAbilities"
+{
+	"necrolyte_death_pulse_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"necrolyte_death_pulse"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_pulse_enemy.vpcf"
+			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_pulse_friend.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 7.0 6.0 5.0 4.0 3.0 2.0"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"85 105 125 145 165 185 205"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"425 450 475 500 525 550 575"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"140 180 220 260 300 340 380"
+				"LinkedSpecialBonus"	"special_bonus_unique_necrophos_6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"70 90 110 130 150 170 190"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"400"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Necrolyte.DeathPulse"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center" "CASTER"
+					"Radius" "%area_of_effect"
+					"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+					"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+						"EffectName"		"particles/units/heroes/hero_necrolyte/necrolyte_pulse_enemy.vpcf"
+						"Dodgeable"        "0"
+						"ProvidesVision"   "0"
+						//"VisionRadius"     "300"
+						"MoveSpeed"        "%projectile_speed"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+					}
+				}
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center" "CASTER"
+					"Radius" "%area_of_effect"
+					"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY" 
+					"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+						"EffectName"		"particles/units/heroes/hero_necrolyte/necrolyte_pulse_friend.vpcf"
+						"Dodgeable"        "0"
+						"ProvidesVision"   "0"
+						//"VisionRadius"     "300"
+						"MoveSpeed"        "%projectile_speed"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+					}
+				}
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+				"Type"		"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%damage"
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				}
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilities/necrolyte/death_pulse.lua"
+						"Function"				"DeathPulseHeal"
+					}
+				}
+			}
+		}
+	}
+	
+	"necrolyte_heartstopper_aura_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"necrolyte_heartstopper_aura"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"900"		// If you change this, also change the AbilityCastRange above
+				"LinkedSpecialBonus"	"special_bonus_unique_necrophos_7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"			"-0.8 -0.9 -1.0 -1.1 -1.2 -1.3 -1.4" 
+				"LinkedSpecialBonus"	"special_bonus_unique_necrophos_3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage_interval"		"0.2" 
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_heartstopper_aura_datadriven"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Aura" 			"modifier_heartstopper_debuff_datadriven"
+				"Aura_Radius" 	"%aura_radius"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_heartstopper_debuff_datadriven"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+
+				"ThinkInterval"	"%aura_damage_interval"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilities/necrolyte/heartstopper_aura.lua"
+						"Function"				"HeartstopperAura"
+
+						"visibility_modifier"	"modifier_heartstopper_debuff_visibility"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_heartstopper_debuff_visibility"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+
+			"modifier_heartstopper_debuff_visibility"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable" 	"0"
+				"Passive"		"0"
+			}
+		}
+	}
+	
+	"necrolyte_sadist_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"necrolyte_sadist_old"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_regen"		"4 6 8 10 12 14 16"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_7"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hero_multiplier"	"10"			// Only used for the stack count
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_regen"		"2 4 8 10 12 14 16"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_7"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"regen_duration"			"6.0"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sadist_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnKill"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_sadist_regen_datadriven"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnHeroKilled"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilities/necrolyte/sadist.lua"
+						"Function"		"ApplySadistHero"
+						"modifier"		"modifier_sadist_regen_datadriven"
+					}
+				}
+			}
+
+			// Stack modifier
+			"modifier_sadist_buff_datadriven"
+			{
+				"IsBuff"	"1"
+				"Duration"	"%regen_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%mana_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
+				}
+			}
+
+			"modifier_sadist_regen_datadriven"
+			{
+				"Duration"	"%regen_duration"
+				"IsHidden"	"1"
+
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilities/necrolyte/sadist.lua"
+						"Function"		"ApplySadist"
+						"stack_modifier"	"modifier_sadist_buff_datadriven"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilities/necrolyte/sadist.lua"
+						"Function"			"RemoveSadist"
+						"stack_modifier"	"modifier_sadist_buff_datadriven"
+					}
+				}			
+			}
+		}
+	}
+	
+	"necrolyte_graveyard_datadriven"
+	{
+		//=================================================================================================================
+		// Necrolyte: Graveyard
+		//=================================================================================================================
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"		"necrolyte_graveyard"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_BOTH"	
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"90 110 130 150 170 190 210"
+		"AbilityCooldown"			"30.0"
+		"AbilityCastRange"			"600"
+		"AoERadius"					"600"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+			"particle"		"particles/necrolyte_graveyard.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 20 25 30 35 40 45"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"30 40 50 60 70 80 90"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"magic_amp"					"-12 -15 -18 -21 -24 -27 -30"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_5"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_amp_tooltip"		"12 15 18 21 24 27 30"
+				"LinkedSpecialBonus"	"special_bonus_unique_necrophos_5"
+			}
+			
+		}
+		
+		"Modifiers"
+		{
+			"graveyard_thinker_damage"
+			{
+				"Aura"					"modifier_graveyard_aura_damage"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Duration"				"%duration"
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"		"particles/necrolyte_graveyard.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"			"TARGET"
+					}			
+				}
+			}
+			"graveyard_thinker_heal"
+			{
+				"Aura"					"modifier_graveyard_aura_heal"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Duration"				"%duration"
+			}				
+			"modifier_graveyard_aura_damage"
+			{
+				"ThinkInterval"			"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Damage"		"%damage"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE"			"%magic_amp"
+				}
+			}
+			"modifier_graveyard_aura_heal"
+			{
+				"ThinkInterval"			"1"
+				"OnIntervalThink"
+				{
+					"Heal"
+					{
+						"Target"		"TARGET"
+						"HealAmount"	"%heal"
+					}
+				}
+			}
+		}
+		"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"		"graveyard_thinker_damage"
+				"Target"			"POINT"
+			}
+			"CreateThinker"
+			{
+				"ModifierName"		"graveyard_thinker_heal"
+				"Target"			"POINT"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Visage.GraveChill.Cast"
+				"Target"			"CASTER"
+			}
+		}
+	}
+	
+	"necrolyte_reapers_scythe_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"necrolyte_reapers_scythe"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+		"HasScepterUpgrade"			"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
+			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_scythe_model.vpcf"
+			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf"
+			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 85 70 55 40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"160 320 480 640 800"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_health"			"0.4 0.5 0.6 0.7 0.8"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5 1.5 1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"respawn"		"0.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"respawn_constant"		"10 20 30 40 50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_health_scepter"	"0.5 0.6 0.7 0.8 0.9"
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_8"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"regen_reduction_scepter"			"2 4 6 8 10"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_reapers_scythe_datadriven"
+				"Target"		"TARGET"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_Necrolyte.ReapersScythe.Cast"
+				"Target"		"CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_Necrolyte.ReapersScythe.Target"
+				"Target"		"TARGET"
+			}
+
+			"DelayedAction"
+			{
+				"Delay"		"%stun_duration"
+
+				"Action"
+				{
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"follow_origin"
+							"TARGET"	"follow_origin"
+						}
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilities/necrolyte/reapers_scythe.lua"
+						"Function"		"ReapersScythe"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_reapers_scythe_datadriven"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"%stun_duration"
+
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+
+				"EffectName"		 "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	 "follow_overhead"
+
+				
+
+				"OnCreated"
+				{
+					"DelayedAction"
+					{
+						// Scythe animation has a 0.7 sec travel time
+						"Delay"		"0.8"
+
+						"Action"
+						{
+							"FireEffect"
+							{
+								"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_model.vpcf"
+								"EffectAttachType"	"follow_origin"
+
+								"ControlPointEntities"
+								{
+									"CASTER"	"follow_origin"
+									"TARGET"	"follow_origin"
+								}
+							}
+						}
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"		"TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6010"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"50"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6703"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7110"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"-0.8"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7111"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_necrophos"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"20"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"special_bonus_unique_necrophos"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"120"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_necrophos"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"2"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_necrophos_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_necrophos"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.3"
+			}
+		}
+	}
+}

@@ -1,0 +1,268 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Razor: Plasma Field
+	//=================================================================================================================
+	"razor_plasma_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5082"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.PlasmaField"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0 0 0 0 0 0 0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 125 125 125 125 125 125"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_min"				"30 50 70 90 110 130 150"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_max"				"160 230 300 370 440 510 580"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"700"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"636"  // 1.2 second to reach radius
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	
+	//=================================================================================================================
+	// Razor: Static Link
+	//=================================================================================================================
+	"razor_static_link"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5083"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Ability.static.start"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"drain_length"			"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"drain_duration"		"18.0 18.0 18.0 18.0 18.0 18.0 18.0 18.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drain_rate"			"7 14 21 28 35 42 49 54"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drain_range_buffer"	"250"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200 200 200 200 200 200 200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900 900 900 900 900 900 900"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"800 800 800 800 800 800 800"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34 3.34 3.34 3.34 3.34 3.34 3.34"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Razor: Unstable Current
+	//=================================================================================================================
+	"razor_unstable_current"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5084"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_pct"	"4 8 12 16 20 24 28"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hit_interval"			"5"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_amount"		"-40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"		"60 100 140 180 220 260 300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"350"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Razor: Eye of the Storm
+	//=================================================================================================================
+	"razor_eye_of_the_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5085"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_Razor.Storm.Cast"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90 80 70 60 50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200 250 300"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500 500 500 500 500"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"25.0"		
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"strike_interval"		"0.7 0.6 0.5 0.4 0.3"	
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"	"1 1 1 1 2"		
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"40 55 70 85 100"		
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"strike_interval_scepter"	"0.6 0.5 0.4 0.3 0.2"	
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_2"	
+			}
+		}
+	}
+}

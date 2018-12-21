@@ -1,0 +1,463 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Brewmaster: Thunder Clap
+	//=================================================================================================================
+	"brewmaster_thunder_clap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5400"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Brewmaster.ThunderClap"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 105 130 150"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400 400 400 400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100 175 250 300"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"25 35 45 55"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"25 35 45 55"
+			}			
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"8.0 8.0 8.0 8.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
+			}			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Brewmaster: Drunken Haze
+	//=================================================================================================================
+	"brewmaster_drunken_haze"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5401"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityCastRange"				"850 850 850 850"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Brewmaster.DrunkenHaze.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"11 9 7 5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"10 20 30 40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"miss_chance"				"70"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Brewmaster: Drunken Brawler
+	//=================================================================================================================
+	"brewmaster_drunken_brawler"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5402"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySound"					"Hero_Brewmaster.Brawler.Crit"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dodge_chance"				"10 15 20 25"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"10 15 20 25"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_multiplier"			"230"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"last_proc"			"13 12 11 10"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Brewmaster: Primal Split
+	//=================================================================================================================
+	"brewmaster_primal_split"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5403"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Brewmaster.PrimalSplit.Spawn"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"HasScepterUpgrade"			"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"140 120 100"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.65"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"16 18 20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"split_duration"			"0.6"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Brewmaster Earth: Hurl Boulder
+	//=================================================================================================================
+	"brewmaster_earth_hurl_boulder"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5404"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySound"					"Brewmaster_Earth.Boulder.Cast"
+
+		"AbilityCastRange"				"800 800 800 800"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+		"AbilityCastPoint"				"0.25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"50 100 150"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2.0 2.0 2.0 2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"800 800 800 800"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Brewmaster Earth: Spell Immunity
+	//=================================================================================================================
+	"brewmaster_earth_spell_immunity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5405"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Brewmaster Earth: Pulverize
+	//=================================================================================================================
+	"brewmaster_earth_pulverize"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5406"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_building_damage"		"90 180 270"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Brewmaster Storm: Dispel Magic
+	//=================================================================================================================
+	"brewmaster_storm_dispel_magic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5408"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Brewmaster_Storm.DispelMagic"
+
+		"AbilityCastRange"				"500 500 500 500"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4"
+		"AbilityCastPoint"				"0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 75 75 75"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"1000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Brewmaster Storm: Cyclone
+	//=================================================================================================================
+	"brewmaster_storm_cyclone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5409"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"600 600 600 600"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityCastPoint"				"0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 150 150 150"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_hero"				"6.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_unit"				"20.0 20.0 20.0 20.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+	}
+
+	//=================================================================================================================
+	// Brewmaster Storm: Wind Walk
+	//=================================================================================================================
+	"brewmaster_storm_wind_walk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5410"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Brewmaster_Storm.WindWalk"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 75 75 75"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"100 160 220"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speeed"		"50 50 50 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0 20.0 20.0 20.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.6 0.6 0.6 0.6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Brewmaster Fire: Permanent Immolation
+	//=================================================================================================================
+	"brewmaster_fire_permanent_immolation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5411"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"20 40 60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"220 220 220"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+}

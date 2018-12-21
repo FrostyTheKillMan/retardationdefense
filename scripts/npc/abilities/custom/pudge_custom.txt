@@ -1,0 +1,585 @@
+"DOTAAbilities"
+{
+	"pudge_meat_hook_lua"
+	{
+		// General
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"pudge_meat_hook"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"ScriptFile"					"abilities/pudge/pudge_meat_hook_lua.lua"	
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1600 1700"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 120 130 140 150 160 170"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hook_speed"			"1600.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hook_width"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hook_distance"		"1000 1100 1200 1300 1400 1500 1600 1700"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"vision_radius"		"500 500 500 500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"4.0 4.0 4.0 4.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"hook_followthrough_constant"			"0.65"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hook_damage"			"90 180 270 360 450 540 630"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hook_damage_strength"	"20 30 40 50 60 70 80"
+			}
+		
+		}
+	}
+	
+	"pudge_rot_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------														
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"pudge_rot"
+		"ScriptFile"					"abilities/pudge/pudge_rot_lua.lua"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+		}
+			
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_radius"			"250 275 300 325 350 375 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rot_tick"				"0.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_slow"				"-20 -22 -24 -26 -28 -30 -32"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_damage"			"35 60 85 110 135 160 185"
+			}
+		}
+	}
+	
+	"pudge_flesh_heap_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"			"pudge_flesh_heap"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"450"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "death_radius_creep"		"900"		
+            }
+			"02"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "death_radius_hero"			"450"		
+            }
+            "03"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "str_bonus_creep"	"0.25"
+            }
+			"04"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "str_bonus_hero"	"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+            }
+            "05"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "max_stacks"		"3000"
+            }
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"health_regen"		"3 6 9 12 15 18 21"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spell_amp"				"0.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_pudge_6"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"magic_resistance"	"0.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_pudge_5"
+			}
+        }
+
+        "Modifiers"
+        {
+            "modifier_pudge_flesh_heap_creep_datadriven"
+            {
+                "Passive"		"1"
+                "IsHidden"		"1"
+
+                "Aura" 			"modifier_pudge_flesh_heap_creep_datadriven_debuff"
+                "Aura_Radius" 	"%death_radius_creep"
+                "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 	"DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_pudge_flesh_heap_creep_datadriven_debuff"
+            {
+                "IsDebuff"	"1"
+                "IsHidden"	"1"
+
+                "OnDeath"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"			"scripts/vscripts/abilities/pudge/flesh_heap.lua"
+                        "Function"				"modifier_flesh_heap_increment"
+                        "modifier"				"modifier_pudge_flesh_heap_creep_datadriven_buff"
+                        "bonus_modifier"		"special_bonus_unique_silencer_5"
+                    }
+                }
+            }
+
+            "modifier_pudge_flesh_heap_creep_datadriven_buff"
+            {
+                "Passive"   "0"
+                "IsPurgable"    "0"
+                "IsHidden"	"0"
+                "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%str_bonus_creep"
+                }
+            }
+			
+			"modifier_pudge_flesh_heap_hero_datadriven"
+            {
+                "Passive"		"1"
+                "IsHidden"		"1"
+
+                "Aura" 			"modifier_pudge_flesh_heap_creep_datadriven_debuff"
+                "Aura_Radius" 	"%death_radius_hero"
+                "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 	"DOTA_UNIT_TARGET_HERO"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_pudge_flesh_heap_hero_datadriven_debuff"
+            {
+                "IsDebuff"	"1"
+                "IsHidden"	"1"
+
+                "OnDeath"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"			"scripts/vscripts/abilities/pudge/flesh_heap.lua"
+                        "Function"				"modifier_flesh_heap_increment"
+                        "modifier"				"modifier_pudge_flesh_heap_hero_datadriven_buff"
+                        "bonus_modifier"		"special_bonus_unique_silencer_5"
+                    }
+                }
+            }
+
+            "modifier_pudge_flesh_heap_hero_datadriven_buff"
+            {
+                "Passive"   "0"
+                "IsPurgable"    "0"
+                "IsHidden"	"0"
+                "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%str_bonus_hero"
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"			"%spell_amp"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%magic_resistance"
+                }
+            }
+
+            "modifier_pudge_flesh_heap_creep_datadriven_passive"
+            {
+                "Passive"   "1"
+                "IsHidden"  "1"
+
+                "OnKill" {
+                    "RunScript"
+                    {
+                        "ScriptFile"		"scripts/vscripts/abilities/pudge/flesh_heap.lua"
+                        "Function"			"modifier_flesh_heap_increment_check"
+                        "modifier"			"modifier_pudge_flesh_heap_creep_datadriven_buff"
+                        "target_modifier" 	"modifier_pudge_flesh_heap_creep_datadriven_debuff"
+                    }
+                }
+            }
+			
+			"modifier_pudge_flesh_heap_hero_datadriven_passive"
+            {
+                "Passive"   "1"
+                "IsHidden"  "1"
+
+                "OnHeroKill" {
+                    "RunScript"
+                    {
+                        "ScriptFile"		"scripts/vscripts/abilities/pudge/flesh_heap.lua"
+                        "Function"			"modifier_flesh_heap_increment_check"
+                        "modifier"			"modifier_pudge_flesh_heap_hero_datadriven_buff"
+                        "target_modifier" 	"modifier_pudge_flesh_heap_hero_datadriven_debuff"
+                    }
+                }
+            }
+			
+			"modifier_pudgE_flesh_heap_regen_datadriven_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%health_regen"
+				}
+			}
+        }
+	}
+	
+	"pudge_dismember_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"BaseClass"						"ability_lua"	
+		"AbilityTextureName"			"pudge_dismember"
+		"ScriptFile"					"abilities/pudge/pudge_dismember_lua.lua"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
+		}
+			
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"160"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+
+		"AbilityCooldown"				"30.0 28.0 26.0 24.0 22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 130 170 210 250"
+			
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dismember_damage_base"		"60 90 120 150 180"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"dismember_damage_strength"	"0.3 0.6 0.9 1.2 1.5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"dismember_heal_strength"	"0.3 0.6 0.9 1.2 1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hero_duration"				"3.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"creep_duration"			"6.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"1.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6023"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"40"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6245"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6506"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"800"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7142"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"50"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_pudge_4"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"1"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_pudge_4"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"0.5"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_pudge_4"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_pudge_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_unique_pudge_4"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"0"
+			}
+		}
+	}
+	
+}

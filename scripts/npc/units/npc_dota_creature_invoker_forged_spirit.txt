@@ -1,0 +1,115 @@
+//=================================================================================
+// BOSS INVOKER: Forge Spirit
+//=================================================================================
+"npc_dota_creature_invoker_forged_spirit"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/invoker/forge_spirit.vmdl"
+	"SoundSet"					"Creep_Good_Range"
+	"ModelScale"				"1.4"
+	"Level"						"1"
+	"IsNeutralUnitType"			"1"
+
+	//"IsSummoned"				"1"
+	//"SelectionGroup"			"Invoker_Forged_Spirits"
+	//"wearable"					"8625"
+	//"UnitLabel"					"forged_spirits"
+	//"ConsideredHero"			"1"
+	//"IsAncient"					"1"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"forged_spirit_melting_strike"
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					""
+	"Ability7"					""
+	"Ability8"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"
+	"MagicalResistance"			"0"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"150"
+	"AttackDamageMax"			"250"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.2"
+	"AttackAnimationPoint"		"0.2"
+	"AttackAcquisitionRange"	"600"
+	"AttackRange"				"500"
+	"ProjectileModel"			"particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+	"ProjectileSpeed"			"1000"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"
+	"BountyGoldMin"				"0"
+	"BountyGoldMax"				"0"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+	"HealthBarOffset"			"270"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"320"
+	"MovementTurnRate"			"0.5"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"3200"
+	"StatusHealthRegen"			"10.0"
+	"StatusMana"				"1000"
+	"StatusManaRegen"			"4.0"
+
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"80.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+	}
+}

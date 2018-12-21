@@ -1,0 +1,126 @@
+//=================================================================================
+// Creature: Kunkka Mini
+// Round 8
+//=================================================================================
+"npc_dota_creature_kunkka_mini"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/kunkka/kunkka.vmdl"
+	"SoundSet"					"n_creep_Melee"
+	"Level"						"1"
+	"ModelScale" 				"0.65"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"
+	"MagicalResistance"			"5"
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"75"
+	"AttackDamageMax"			"80"
+	"AttackRate"				"1.7"
+	"AttackAnimationPoint"		"0.4"
+	"AttackAcquisitionRange"	"700"
+	"AttackRange"				"100"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			""
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"140"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"119"
+	"BountyGoldMin"				"76"
+	"BountyGoldMax"				"88"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"315"
+	"MovementTurnRate"			"0.6"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"650"
+	"StatusHealthRegen"			"1.0"
+	"StatusMana"				"200"
+	"StatusManaRegen"			"1.0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{	
+		//Basic AI State
+		//-----------------------------------------------------------------
+		"DefaultState"			"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"			"Invade"
+				"Aggression"	"60.0"
+				"Avoidance"		"0.0"
+				"Support"		"0.0"
+			}
+		}
+		
+		//Level Up Parameters
+		//-----------------------------------------------------------------
+		"HPGain"					"50"
+		"DamageGain"				"5"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"13"
+
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"10" // boots
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"11" // hands
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"12" // sword
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"14" // hair
+			}
+		}
+	}
+}

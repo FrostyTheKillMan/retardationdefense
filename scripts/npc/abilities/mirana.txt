@@ -1,0 +1,260 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Mirana Arrow
+	//=================================================================================================================
+	"mirana_arrow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5048"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Mirana.ArrowCast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17.0"
+		"AbilityDuration"				"3.11 3.11 3.11 3.11 3.11 3.25 3.5"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"50 140 230 320 375 420 550"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 100 100 100 100 100 100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"arrow_speed"		"857.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_width"		"115"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_range"		"3000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_max_stunrange"	"1500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"arrow_min_stun"	"0.01"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"arrow_max_stun"	"5.0"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_bonus_damage"	"140"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_vision"	"500"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Ability: Mirana Invis
+	//=================================================================================================================
+	"mirana_invis"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5049"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.MoonlightShadow"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "5"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"220.0 180.0 140.0 120.0 100.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_delay"			"2.5 2.0 1.5 1.0 0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"18.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"		"25"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Mirana Leap
+	//=================================================================================================================
+	"mirana_leap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5050"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Leap"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_distance"			"550"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_speed"			"1300.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_acceleration"		"6000.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"leap_speedbonus"	"8 16 24 32 40 48 56"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_speedbonus_as"	"60 80 100 120 140 160 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_mirana_1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_bonus_duration"	"2.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"3"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"60 50 40 30 20 10 5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	
+	//=================================================================================================================
+	// Ability: Mirana Starfall
+	//=================================================================================================================
+	"mirana_starfall"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5051"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Starfall"
+
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 12.0 12.0 12.0 12.0 12.0 12.0"
+		"AbilityDuration"				"10.0 10.0 10.0 10.0 10.0 10.0 10.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"75 150 225 300 375 450 525"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 105 130 155 180 205 230"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"starfall_radius"	"600 600 600 600 650 675 700"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"starfall_secondary_radius"	"500"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval_scepter"	"10.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+}
