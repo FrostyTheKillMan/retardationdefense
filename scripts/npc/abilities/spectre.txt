@@ -114,13 +114,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20 30 40 50 60 70 80 90"
+				"bonus_damage"			"24 32 40 48 56 64 72"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"0"
+				"radius"				"75"
 			}
 			"03"
 			{
@@ -130,7 +130,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blind_duration"		"5.0"
+				"blind_duration"		"1.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -192,7 +192,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 150 120"
+		"AbilityCooldown"				"180 150 120 90 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -205,23 +205,23 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5.0 6.0 7.0 8.0 9.0"
+				"duration"					"4.0 5.0 6.0 7.0 8.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -10"
+				"illusion_damage_outgoing"		"-60 -50 -40 -30 -20 -10"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"	"40 50 60"
+				"tooltip_outgoing"			"40 50 60 70 80 90"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_4"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"100 100 100"
+				"illusion_damage_incoming"	"100 100 100 100 100"
 			}
 			"05"
 			{
