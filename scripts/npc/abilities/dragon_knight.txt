@@ -25,15 +25,15 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 170 240 300"
+		"AbilityDamage"					"90 170 240 300 360 420 480"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,12 +42,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"start_radius"			"150 150 150 150"
+				"start_radius"			"150 150 150 150 150 150 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"end_radius"			"250 250 250 250"
+				"end_radius"			"250 250 250 250 300 350 400"
 			}
 			"03"
 			{
@@ -98,11 +98,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10 9"
+		"AbilityCooldown"				"12 11 10 9 8 7 6"
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"25 50 75 100"
+		"AbilityDamage"					"25 50 75 100 125 150 175"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -149,14 +149,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"4 6 8 10"
+				"bonus_health_regen"			"4 6 8 10 12 14 16"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"3 6 9 12"
+				"bonus_armor"					"3 6 9 12 15 18 21"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -178,6 +178,8 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DragonKnight.ElderDragonForm"
+		"LevelsBetweenUpgrades"         "6"
+		"MaxLevel"                      "3"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
