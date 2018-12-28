@@ -46,7 +46,7 @@ function modifier_rot_lua:OnCreated( kv )
 	self.rot_slow = self:GetAbility():GetSpecialValueFor( "rot_slow" )
 	self.rot_damage = self:GetAbility():GetSpecialValueFor( "rot_damage" )
 	self.rot_tick = self:GetAbility():GetSpecialValueFor( "rot_tick" )
-
+	
 	if IsServer() then
 		if self:GetParent() == self:GetCaster() then
 			EmitSoundOn( "Hero_Pudge.Rot", self:GetCaster() )
@@ -74,9 +74,8 @@ end
 
 function modifier_rot_lua:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 	}
-
 	return funcs
 end
 
@@ -90,12 +89,12 @@ function modifier_rot_lua:GetModifierMoveSpeedBonus_Percentage( params )
 	return self.rot_slow
 end
 
+
 --------------------------------------------------------------------------------
 
 function modifier_rot_lua:OnIntervalThink()
 	if IsServer() then
 		local flDamagePerTick = self.rot_tick * self.rot_damage
-
 		if self:GetCaster():IsAlive() then
 			local damage = {
 				victim = self:GetParent(),
@@ -107,8 +106,6 @@ function modifier_rot_lua:OnIntervalThink()
 
 			ApplyDamage( damage )
 		end
-		
-		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), self:GetCaster(), self.rot_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
 	end
 end
 

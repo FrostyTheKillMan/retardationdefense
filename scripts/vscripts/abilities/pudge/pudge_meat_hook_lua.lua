@@ -3,10 +3,10 @@ LinkLuaModifier( "modifier_meat_hook_followthrough_lua", "abilities/pudge/modifi
 LinkLuaModifier( "modifier_meat_hook_lua", "abilities/pudge/modifiers/modifier_meat_hook_lua.lua" ,LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_meat_hook_rot_lua", "abilities/pudge/modifiers/modifier_meat_hook_rot_lua.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_meat_hook_rot_lua_effect", "abilities/pudge/modifiers/modifier_meat_hook_rot_lua_effect.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_meat_hook_rot_silence_lua", "abilities/pudge/modifiers/modifier_meat_hook_rot_silence_lua.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_rot_silence_stack_lua", "abilities/pudge/modifiers/modifier_rot_silence_stack_lua.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_silence_lua", "abilities/pudge/modifiers/modifier_silence_lua.lua" ,LUA_MODIFIER_MOTION_NONE )
 
-
---[[Author: Valve
-	Date: 26.09.2015.]]
 --------------------------------------------------------------------------------
 
 function pudge_meat_hook_lua:OnAbilityPhaseStart()
@@ -27,19 +27,32 @@ function pudge_meat_hook_lua:OnSpellStart()
 	if self.hVictim ~= nil then
 		self.hVictim:InterruptMotionControllers( true )
 	end
-
+	
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_pudge_1")
+	local talent_distance = self:GetCaster():FindAbilityByName("special_bonus_unique_pudge_3")
+	
 	self.hook_damage = self:GetSpecialValueFor( "hook_damage" )
 	self.hook_damage_strength = self:GetSpecialValueFor( "hook_damage_strength" ) / 100
+	
+	if talent and talent:GetLevel() > 0 then
+		self.hook_damage_strength = self.hook_damage_strength + ( talent:GetSpecialValueFor( "value" ) / 100 )
+	end 
+	
 	self.hook_damage_bonus = self:GetCaster():GetStrength() * self.hook_damage_strength
 	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
 	self.hook_width = self:GetSpecialValueFor( "hook_width" )
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
+	
+	if talent_distance and talent_distance:GetLevel() > 0 then
+		self.hook_distance = self.hook_distance + talent_distance:GetSpecialValueFor( "value" ) 
+	end 
+	
 	self.hook_followthrough_constant = self:GetSpecialValueFor( "hook_followthrough_constant" )
 		
 	self.vision_radius = self:GetSpecialValueFor( "vision_radius" ) 
 	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )  
 	
-	
+
 	if self:GetCaster() and self:GetCaster():IsHero() then
 		local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
 		if hHook ~= nil then
@@ -126,8 +139,17 @@ function pudge_meat_hook_lua:OnProjectileHit( hTarget, vLocation )
 
 				ApplyDamage( damage )
 				
-				hTarget:AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_rot_lua", { duration = 5} )
-							
+				local talent_rot = self:GetCaster():FindAbilityByName("special_bonus_unique_pudge_2")
+				local talent_silence = self:GetCaster():FindAbilityByName("special_bonus_unique_pudge_7")
+				
+				if talent_rot and talent_rot:GetLevel() > 0 then
+					hTarget:AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_rot_lua", { duration = 5} )
+				end	
+
+				if talent_silence and talent_silence:GetLevel() > 0 then
+					hTarget:AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_rot_silence_lua", { duration = 5} )
+				end	
+				
 				if not hTarget:IsAlive() then
 					self.bDiedInHook = true
 				end

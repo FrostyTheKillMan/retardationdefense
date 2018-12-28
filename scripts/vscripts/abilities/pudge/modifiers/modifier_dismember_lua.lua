@@ -20,6 +20,7 @@ function modifier_dismember_lua:OnCreated( kv )
 	self.dismember_heal_strength = self:GetAbility():GetSpecialValueFor( "dismember_heal_strength" )
 	self.tick_rate = self:GetAbility():GetSpecialValueFor( "tick_rate" )
 
+	print(self.dismember_heal_strength)
 
 	if IsServer() then
 		self:GetParent():InterruptChannel()

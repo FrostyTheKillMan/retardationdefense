@@ -75,7 +75,7 @@
 		"overrider_hero"		"npc_dota_hero_pudge"
 		"Ability1"				"pudge_meat_hook_lua"
 		"Ability2"				"pudge_rot_lua"
-		"Ability3"				"pudge_flesh_heap_datadriven"
+		"Ability3"				"pudge_flesh_heap_lua"
 		"Ability6"				"pudge_dismember_lua"
 		"Ability10"				"special_bonus_unique_pudge_1"
 		"Ability11"				"special_bonus_unique_pudge_2"						
@@ -106,6 +106,18 @@
 		"Ability15"				"special_bonus_unique_silencer_6"
 		"Ability16"				"special_bonus_unique_silencer_7"
 		"Ability17"				"special_bonus_unique_silencer_8"
+	}
+	//=================================================================================================================
+	// HERO: Ursa
+	//=================================================================================================================
+	"npc_dota_hero_ursa"
+	{
+		"overrider_hero"		"npc_dota_hero_ursa"
+		"Ability1"				"ursa_earthshock_lua"
+		"Ability2"				"ursa_overpower_lua"	
+		"Ability3"				"ursa_fury_swipes_lua"
+		"Ability4"				"ursa_wide_swipe_lua"
+		"Ability6"				"ursa_enrage_lua"
 	}
 	
 }

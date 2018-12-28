@@ -20,6 +20,12 @@ function pudge_dismember_lua:GetChannelTime()
 	self.creep_duration = self:GetSpecialValueFor( "creep_duration" )
 	self.hero_duration = self:GetSpecialValueFor( "hero_duration" )
 
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_pudge_8")
+	
+	if talent and talent:GetLevel() > 0 then
+		self.hero_duration = self.hero_duration + talent:GetSpecialValueFor( "value" ) 
+	end 
+	
 	if IsServer() then
 		if self.hVictim ~= nil then
 			if self.hVictim:IsHero() then

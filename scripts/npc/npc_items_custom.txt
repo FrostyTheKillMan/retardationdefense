@@ -123,14 +123,7 @@
 			}
 		}
 	}
-	"item_recipe_rapier"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"132"
-	
-		"ItemRecipe"					"0"
-	}
+
 	//=================================================================================================================
 	// Holdout Tombstone
 	//=================================================================================================================
@@ -167,150 +160,8 @@
 		"ItemCastOnPickup"				"1"
 		"ItemKillable"					"0"
 	}
-	//=================================================================================================================
-	// Ring of Aquila
-	//=================================================================================================================
-	"item_ring_of_aquila"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"212"
-		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityCastRange" 				"1200"
 
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"965"
-		"ItemShopTags"					""
-		"ItemQuality"					"rare"
-		"ItemAliases"					"roa;ring of aquila"
-		"ItemShareability"				""		
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ActiveDescriptionLine"			"2"
-		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
 
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"11"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"0.75"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"2"
-			}			
-		}		
-	}
-	//=================================================================================================================
-	// Poor Man's Shield
-	//=================================================================================================================
-	"item_poor_mans_shield"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"71"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					"agi;block"
-		"ItemQuality"					"common"
-		"ItemAliases"					"pms;poor man's shield"
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
-
-		"AbilityCooldown"				"0"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"75"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"75"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_block_melee"			"10"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_block_range"			"5"
-			}	
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_block_duration"		"5"
-			}	
-		}
-	}
 	//=================================================================================================================
 	// Recipe: Iron Talon
 	//=================================================================================================================
@@ -323,10 +174,10 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"125"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-		"IsObsolete"					"1"
-		"ItemPurchasable"				"0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -353,17 +204,17 @@
 
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"15.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"0"
+		"ItemCost"						"600"
 		"ItemShopTags"					"damage" 
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
-		"IsObsolete"					"1"
-		"ItemPurchasable"				"0"
+		"IsObsolete"					"0"
+		"ItemPurchasable"				"1"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -382,7 +233,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"350"
+				"quelling_range_tooltip"	"350"
 			}
 			"04"
 			{
@@ -411,5 +262,202 @@
 			}
 		}
 	}
+	
+	//=================================================================================================================
+	// Recipe: Poor Man's Shield
+	//=================================================================================================================
+	"item_recipe_poor_mans_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"70"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"IsObsolete"					"0"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_poor_mans_shield"
+		"ItemPurchasable"				"1"
+		"ItemRequirements"
+		{
+			"01"						"item_slippers;item_slippers;item_stout_shield"
+		}
+	}
+	
+	//=================================================================================================================
+	// Poor Man's Shield
+	//=================================================================================================================
+	"item_poor_mans_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"71"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"470"
+		"ItemShopTags"					"agi;block"
+		"ItemQuality"					"common"
+		"ItemAliases"					"pms;poor man's shield"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
+
+		"AbilityCooldown"				"15.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_melee"	"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_ranged"	"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"50"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"50"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_block_melee"			"30"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_block_range"			"15"
+			}	
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_block_duration"		"5"
+			}	
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: Ring of Aquila
+	//=================================================================================================================
+	"item_recipe_ring_of_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"211"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"185"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ring_of_aquila"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band;item_ring_of_basilius"
+		}
+	}
+	
+	//=================================================================================================================
+	// Ring of Aquila
+	//=================================================================================================================
+	"item_ring_of_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"212"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"roa;ring of aquila"
+		"ItemShareability"				""		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ActiveDescriptionLine"			"2"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
+
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"0.75"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"3"
+			}			
+		}		
+	}
 }

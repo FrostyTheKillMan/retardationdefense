@@ -573,7 +573,7 @@
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"regen_reduction_scepter"			"2 4 6 8 10"
+				"regen_reduction_scepter"			"-1 -2 -3 -4 -5"
 			}
 		}
 
@@ -673,6 +673,19 @@
 				{
 					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
+			}
+			
+			"modifier_reapers_scythe_datadriven_regen"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"    "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				
+				"Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%str_bonus_hero"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"				"%regen_reduction_scepter"
+                }
 			}
 		}
 	}
