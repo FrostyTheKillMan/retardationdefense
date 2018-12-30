@@ -40,7 +40,8 @@
 	{
 		"overrider_hero"		"npc_dota_hero_faceless_void"
 		
-		"Ability4"				"lich_dark_sorcery"
+		"Ability3"				"lich_dark_sorcery"
+		"Ability4"				"lich_sinister_gaze"
 		"Ability5"				"lich_frost_aura"
 	
 		

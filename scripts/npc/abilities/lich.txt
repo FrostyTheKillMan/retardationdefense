@@ -185,7 +185,7 @@
 		"ID"					"7312"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityTextureName"				"lich_frost_aura"
+		"AbilityTextureName"			"lich_ice_armor"
 				
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
