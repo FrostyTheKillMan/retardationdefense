@@ -146,7 +146,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5017"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -155,34 +155,33 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"min_bonus_pct"				"75"
+				"min_bonus_pct"				"70 75 80 85 90 95 100"
 			}			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"7 18 29 40 55 70 85"
+				"bonus_movement_speed"		"12 24 36 48 60 72 84"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"7 18 29 40 55 70 85"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
+				"bonus_attack_speed"		"30 45 60 75 90 105 120"
 			}		
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_bonus_pct"				"25"
+				"max_bonus_pct"				"20 25 30 35 40 45 50"
 			}	
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"visibility_threshold_pct"	"25"
+				"visibility_threshold_pct"	"10 15 20 25 30 35 40"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"invis_threshold_pct"	"25"
+				"invis_threshold_pct"	"10 15 20 25 30 35 40"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -205,9 +204,8 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"2"
+		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"         "6"
-		"MaxLevel"                      "5"
-
 		"AbilitySound"					"hero_bloodseeker.rupture"
 
 		"HasScepterUpgrade"			"1"
@@ -219,15 +217,15 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"70 60 50 40 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 225 250 275 300"		
+		"AbilityManaCost"				"200 225 250"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"700 800 900 1000 1100"
 			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -240,38 +238,32 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"12.0"
+				"duration"					"8 9 10 10 12"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_damage_pct"		"30 45 60 75 90"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_3"
+				"movement_damage_pct"		"8 9 10 11 12"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_cap_amount"			"200"
+				"damage_cap_amount"			"200 250 300 350 400"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_cap_interval"		"0.25"
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_tooltip"		"700 800 900 1000 1100"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"		"1000"
+				"var_type"			"FIELD_INTEGER"
+				"max_charges_scepter"		"4"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_charges_scepter"		"2"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_restore_time_scepter"		"40"
+				"charge_restore_time_scepter"		"30"
 			}
 		}
 	}
