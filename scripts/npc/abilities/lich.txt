@@ -95,7 +95,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_drain"		"5 6 7 8"
+				"mana_drain"		"4 5 6 7 8 9 10"
 			}
 			"02"
 			{
@@ -105,7 +105,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed"		"100 125 150 175 200 225 250 275"
+				"attack_speed"		"125 150 175 200 225 250 275"
 			}
 			"04"
 			{
