@@ -18,7 +18,6 @@ end
 function modifier_wide_swipe_lua:OnCreated( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_pct = self:GetAbility():GetSpecialValueFor("damage_pct")
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
 	end
 end
@@ -26,7 +25,6 @@ end
 function modifier_wide_swipe_lua:OnRefresh( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_pct = self:GetAbility():GetSpecialValueFor("damage_pct")
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
 	end
 end
@@ -55,6 +53,12 @@ function modifier_wide_swipe_lua:GetModifierProcAttack_Feedback( params )
 			if #enemies > 0 then
 				for _,enemy in pairs(enemies) do
 				print( enemy )
+				local modifier = self:GetCaster():AddNewModifier(
+					self:GetCaster(),
+					self:GetAbility(),
+					"modifier_wide_swipe_attack_lua",
+					{}
+				)
 					if enemy ~= nil and ( not enemy:IsInvulnerable() ) then
 						self:GetCaster():PerformAttack (
 							enemy,
@@ -68,6 +72,9 @@ function modifier_wide_swipe_lua:GetModifierProcAttack_Feedback( params )
 						)
 					end
 				end
+			end
+			if modifier ~= nil then
+				self:GetCaster():RemoveModifierByName( "modifier_wide_swipe_attack_lua" )
 			end
 		end
 	end

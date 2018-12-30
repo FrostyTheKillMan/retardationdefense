@@ -59,7 +59,7 @@ function modifier_fury_swipes_lua:GetModifierProcAttack_BonusDamage_Physical( pa
 		-- add stack if not
 		if modifier==nil then
 			-- if does not have break
-			if not self:GetParent():PassivesDisabled() then
+			if not self:GetParent():PassivesDisabled() and not target:IsBuilding() then
 				-- determine duration if roshan/not
 				local duration_time = self.reset_time
 				if params.target:GetUnitName()=="npc_dota_roshan" then

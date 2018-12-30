@@ -66,12 +66,14 @@ end
 
 function modifier_overpower_lua:GetModifierProcAttack_Feedback( params )
 	if IsServer() then
-		-- decrement stack
-		self:DecrementStackCount()
+		if not self:GetCaster():HasModifier("modifier_wide_swipe_attack_lua") then
+			-- decrement stack
+			self:DecrementStackCount()
 
-		-- destroy if reach zero
-		if self:GetStackCount() < 1 then
-			self:Destroy()
+			-- destroy if reach zero
+			if self:GetStackCount() < 1 then
+				self:Destroy()
+			end
 		end
 	end
 end
