@@ -20,6 +20,12 @@ function ursa_earthshock_lua:OnSpellStart()
 	self.shock_damage = self:GetSpecialValueFor( "shock_damage" )
 	self.slow_duration = self:GetSpecialValueFor( "slow_duration" )
 	
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_ursa_2")
+	
+	if talent and talent:GetLevel() > 0 then
+		self.shock_radius = self.shock_radius + talent:GetSpecialValueFor( "value" ) 
+	end 
+	
 	if IsServer() then
 		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self.shock_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 		if #enemies > 0 then
@@ -57,7 +63,7 @@ function ursa_earthshock_lua:PlayEffects()
 	local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
 	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
 	ParticleManager:SetParticleControlForward( nFXIndex, 0, self:GetCaster():GetForwardVector() )
-	ParticleManager:SetParticleControl( nFXIndex, 1, Vector(slow_radius/2, slow_radius/2, slow_radius/2) )
+	ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self.shock_radius/2, self.shock_radius/2, self.shock_radius/2) )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 	-- play sounds

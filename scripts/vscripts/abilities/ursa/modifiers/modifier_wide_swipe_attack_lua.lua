@@ -47,7 +47,7 @@ end
 
 function modifier_wide_swipe_attack_lua:GetModifierDamageOutgoing_Percentage( params )
 	if IsServer() then
-		return self.damage_pct / 100
+		return (100 - self.damage_pct) * -1
 	end
 end
 

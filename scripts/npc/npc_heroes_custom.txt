@@ -142,6 +142,14 @@
 		"Ability3"				"ursa_fury_swipes_lua"
 		"Ability4"				"ursa_wide_swipe_lua"
 		"Ability6"				"ursa_enrage_lua"
+		"Ability10"				"special_bonus_unique_ursa"
+		"Ability11"				"special_bonus_unique_ursa_2"						
+		"Ability12"				"special_bonus_unique_ursa_3"
+		"Ability13"				"special_bonus_unique_ursa_4"
+		"Ability14"				"special_bonus_unique_ursa_5"
+		"Ability15"				"special_bonus_unique_ursa_6"
+		"Ability16"				"special_bonus_unique_ursa_7"
+		"Ability17"				"special_bonus_unique_ursa_8"
 	}
 	
 }

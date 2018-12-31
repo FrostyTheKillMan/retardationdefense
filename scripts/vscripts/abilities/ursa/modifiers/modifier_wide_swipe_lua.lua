@@ -73,9 +73,7 @@ function modifier_wide_swipe_lua:GetModifierProcAttack_Feedback( params )
 					end
 				end
 			end
-			if modifier ~= nil then
-				self:GetCaster():RemoveModifierByName( "modifier_wide_swipe_attack_lua" )
-			end
+			self:GetCaster():RemoveModifierByName( "modifier_wide_swipe_attack_lua" )
 		end
 	end
 end

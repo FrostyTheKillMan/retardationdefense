@@ -18,18 +18,34 @@ end
 function modifier_fury_swipes_lua:OnCreated( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
 		self.reset_time = self:GetAbility():GetSpecialValueFor("reset_time")
 		self.reset_time_roshan = self:GetAbility():GetSpecialValueFor("reset_time_roshan")
+		
+		local talent = self:GetAbility():GetCaster():FindAbilityByName("special_bonus_unique_ursa_3")
+	
+		if talent and talent:GetLevel() > 0 then
+			self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
+			self.damage_per_stack = self.damage_per_stack + talent:GetSpecialValueFor( "value" ) 
+		else 
+			self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
+		end
 	end
 end
 
 function modifier_fury_swipes_lua:OnRefresh( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
 		self.reset_time = self:GetAbility():GetSpecialValueFor("reset_time")
 		self.reset_time_roshan = self:GetAbility():GetSpecialValueFor("reset_time_roshan")
+		
+		local talent = self:GetAbility():GetCaster():FindAbilityByName("special_bonus_unique_ursa_3")
+		
+		if talent and talent:GetLevel() > 0 then
+			self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
+			self.damage_per_stack = self.damage_per_stack + talent:GetSpecialValueFor( "value" ) 
+		else 
+			self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
+		end
 	end
 end
 --------------------------------------------------------------------------------
