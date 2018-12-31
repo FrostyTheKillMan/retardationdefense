@@ -9,13 +9,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"5599"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 130 150 170"
+		"AbilityManaCost"				"110 130 150 170 190 210 230"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"200 400 600 800"
+				"damage"					"200 400 600 800 1000 1200"
 			}
 			"04"
 			{
@@ -57,7 +57,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"activation_delay"			"1.75"
+				"activation_delay"			"1.75 1.50 1.25 1.0 .75 .50 .25"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -81,11 +81,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 16.0 13.0 10.0"
+		"AbilityCooldown"				"30.0 27.5 25.0 22.5 20.0 18.5 16.5"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 110 140 160"
+		"AbilityManaCost"				"80 110 140 160 180 200 220"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -109,7 +109,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"2 3 4 5"
+				"stun_duration"				"2 3 4 5 6 7 8"
 			}
 			"05"
 			{
@@ -155,7 +155,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150 175"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -169,13 +169,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"300 400 500 600"
+				"damage"					"300 400 500 600 700 800 900"
 				"LinkedSpecialBonus"		"special_bonus_unique_techies"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"4 5 6 7"
+				"silence_duration"			"4 5 6 7 8 9 10"
 			} 
 			"04"
 			{
@@ -203,7 +203,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
-
+		"MaxLevel"                        "5"
+		"LevelsBetweenUpgrades"         "6"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"HasScepterUpgrade"				"1"
 
@@ -214,11 +215,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10.0 10.0 10.0"
+		"AbilityCooldown"				"10.0 10.0 10.0 10.0 10.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 240 300"
+		"AbilityManaCost"				"200 240 300 360 420"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -227,12 +228,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_mines"					"21"
+				"max_mines"					"99999999"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"300 450 600"
+				"damage"					"300 450 600 750 900"
 			}
 			"03"
 			{
@@ -257,7 +258,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"450 600 750"
+				"damage_scepter"			"450 600 750 900 1050"
 			}
 			"08"
 			{
@@ -282,7 +283,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"model_scale"				"0 10 20"     // Percentage over model scale
+				"model_scale"				"0 10 20 30 50"     // Percentage over model scale
 			}
 			"13"
 			{
