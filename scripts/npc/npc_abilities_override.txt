@@ -93,6 +93,7 @@
 #base "abilities/spirit_breaker.txt"
 #base "abilities/storm_spirit.txt"
 #base "abilities/sven.txt"
+#base "abilities/techies.txt"
 #base "abilities/templar_assassin.txt"
 #base "abilities/terrorblade.txt"
 #base "abilities/tidehunter.txt"
