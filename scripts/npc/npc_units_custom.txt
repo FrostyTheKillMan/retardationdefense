@@ -1,0 +1,2 @@
+#base "units/creep_badguys.txt"
+#base "units/creep_goodguys.txt"

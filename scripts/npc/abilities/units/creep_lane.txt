@@ -1,0 +1,31 @@
+"DOTAAbilities"
+{
+	"creep_power_range_lua"
+	{
+		// General
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"dazzle_weave"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"ScriptFile"					"abilities/creep/creep_power_range_lua.lua"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_pct_base"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_pct_bonus"		"1"
+			}
+		}
+	}
+}

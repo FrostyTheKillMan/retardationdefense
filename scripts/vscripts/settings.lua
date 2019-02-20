@@ -269,9 +269,6 @@ function GameMode:OnHeroInGame(hero)
 	-- Store this hero handle in this table.
 	table.insert(self.vPlayers, hero)
 
-	-- This line for example will set the starting gold of every hero to 500 unreliable gold
-	hero:SetGold(500, false)
-
 	-- These lines will create an item and add it to the player, effectively ensuring they start with the item
 	local item = CreateItem("item_example_item", hero, hero)
 	hero:AddItem(item)
@@ -342,6 +339,11 @@ function GameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		GameMode:OnHeroInGame(npc)
+	end
+	
+	local innate_ability = npc:FindAbilityByName("creep_power_range_lua")
+	if innate_ability then
+	   innate_ability:SetLevel(1)
 	end
 end
 

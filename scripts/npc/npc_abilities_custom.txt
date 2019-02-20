@@ -7,6 +7,8 @@
 #base "abilities/custom/silencer_custom.txt"
 #base "abilities/custom/ursa_custom.txt"
 
+#base "abilities/units/creep_lane.txt"
+
 "DOTAAbilities"
 {
 	"Version"		"1"
