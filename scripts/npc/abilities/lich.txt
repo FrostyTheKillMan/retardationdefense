@@ -95,7 +95,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_drain"		"4 5 6 7 8 9 10"
+				"mana_drain"		"4"
 			}
 			"02"
 			{
@@ -398,7 +398,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 400 500 600 700"
+				"damage"				"300 375 450 525 600"
 			}
 			"02"
 			{
@@ -408,7 +408,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"jump_range"			"600 600 600 700 800"
+				"jump_range"			"600 675 750 825 900"
 			}			
 			"04"
 			{
