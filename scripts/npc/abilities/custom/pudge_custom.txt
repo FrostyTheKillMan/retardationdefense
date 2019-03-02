@@ -78,20 +78,20 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hook_damage_strength"	"20 30 40 50 60 70 80"
+				"hook_damage_strength"	"30"
 				"LinkedSpecialBonus"	"special_bonus_unique_pudge_1" 
 			}
 		
 		}
 	}
 	
-	"pudge_hook_around_datadriven"
+	"pudge_living_hook_lua"
 	{
 		// General
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"pudge_meat_hook"
+		"AbilityTextureName"				"pudge_meat_hook"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 
@@ -276,7 +276,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"flesh_heap_health_regen"			"3 6 9 12 15 18 21"
+				"flesh_heap_health_regen"			"4 6 8 10 12 14 16"
 			}
 			"02"
 			{
