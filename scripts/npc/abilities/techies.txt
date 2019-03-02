@@ -9,7 +9,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"5599"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICIAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Casting
@@ -109,7 +109,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"2 3 4 5 6 7 8"
+				"stun_duration"				"1.25 1.5 1.75 2.0 2.25 2.5 2.75"
 			}
 			"05"
 			{
