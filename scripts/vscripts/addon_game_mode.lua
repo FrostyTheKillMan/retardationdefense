@@ -3,6 +3,7 @@
 ]]
 
 -- Required files to be visible from anywhere
+require( 'libraries/attributes' )
 require( 'timers' )
 require( 'settings' )
 require( 'utils' )

@@ -80,6 +80,7 @@ function GameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
+	
 	print('[BAREBONES] GameRules set')
 
 	-- Listeners - Event Hooks
@@ -199,6 +200,7 @@ function GameMode:CaptureGameMode()
 		mode:SetMinimumAttackSpeed( MINIMUM_ATTACK_SPEED )
 
 		self:OnFirstPlayerLoaded()
+		
 	end
 end
 
@@ -249,7 +251,9 @@ end
   It can be used to initialize non-hero player state or adjust the hero selection (i.e. force random etc)
 ]]
 function GameMode:OnAllPlayersLoaded()
+
 	print("[BAREBONES] All Players have loaded into the game")
+	
 end
 
 --[[
@@ -266,6 +270,8 @@ function GameMode:OnHeroInGame(hero)
 	hero.player = PlayerResource:GetPlayer(hero:GetPlayerID())
 	-- Store the player's name inside this hero handle.
 	hero.playerName = PlayerResource:GetPlayerName(hero:GetPlayerID())
+	
+	Attributes:ModifyBonuses(hero)
 	-- Store this hero handle in this table.
 	table.insert(self.vPlayers, hero)
 end
@@ -341,6 +347,7 @@ function GameMode:OnNPCSpawned(keys)
 	if innate_ability then
 	   innate_ability:SetLevel(1)
 	end
+	
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
