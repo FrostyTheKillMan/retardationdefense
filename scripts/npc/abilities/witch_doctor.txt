@@ -55,7 +55,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hero_damage"			"50 100 150 200 250 300 350"
+				"hero_damage"			"60 100 140 180 220 260 300"
 			}
 			"04"
 			{
@@ -65,7 +65,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounces"				"3 5 7 9 11 13 15"
+				"bounces"				"2 3 4 5 6 7 8"
 			}
 			"06"
 			{
@@ -215,7 +215,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_CREEP || DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
