@@ -10,7 +10,7 @@ PRE_GAME_TIME = 60.0                    -- How long after people select their he
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
-GOLD_PER_TICK = 5                     	-- How much gold should players get per tick?
+GOLD_PER_TICK = 10                     	-- How much gold should players get per tick?
 GOLD_TICK_TIME = 1                      -- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes (Note: this is not working currently I believe)
@@ -20,7 +20,7 @@ MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our 
 MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for creeps?
 MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
-RUNE_SPAWN_TIME = 120                    -- How long in seconds should we wait between rune spawns?
+RUNE_SPAWN_TIME = 300                   -- How long in seconds should we wait between rune spawns?
 CUSTOM_BUYBACK_COST_ENABLED = false     -- Should we use a custom buyback cost setting?
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = false  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = true               -- Should we allow people to buyback when they die?
@@ -49,7 +49,7 @@ MINIMUM_ATTACK_SPEED = 10
 -- Fill this table up with the required XP per level if you want to change it
 XP_PER_LEVEL_TABLE = {}
 for i=1,MAX_LEVEL do
-	XP_PER_LEVEL_TABLE[i] = i * 100
+	XP_PER_LEVEL_TABLE[i] = i * 200
 end
 
 -- Generated from template
