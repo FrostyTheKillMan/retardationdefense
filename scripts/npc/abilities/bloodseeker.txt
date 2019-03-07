@@ -204,6 +204,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_bloodseeker.rupture"
+		"LevelsBetweenUpgrades"         "6"
+      		"MaxLevel"                      "5"
 
 		"HasScepterUpgrade"			"1"
 
@@ -260,7 +262,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"charge_restore_time_scepter"		"10"
+				"charge_restore_time_scepter"		"20"
 			}
 		}
 	}
