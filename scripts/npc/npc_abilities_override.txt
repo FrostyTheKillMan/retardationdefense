@@ -53,6 +53,7 @@
 #base "abilities/luna.txt"
 #base "abilities/lycan.txt"
 #base "abilities/magnataur.txt"
+#base "abilities/mars.txt"
 #base "abilities/medusa.txt"
 #base "abilities/meepo.txt"
 #base "abilities/mirana.txt"

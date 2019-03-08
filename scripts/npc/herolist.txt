@@ -11,6 +11,7 @@
 	"npc_dota_hero_dragon_knight" 	"1"
 	"npc_dota_hero_huskar"		"1"
 	"npc_dota_hero_kunkka"		"1"
+	"npc_dota_hero_mars"		"1"
 	"npc_dota_hero_phoenix"		"1"
 	"npc_dota_hero_pudge"		"1"
 	"npc_dota_hero_skeleton_king"	"1"
@@ -23,6 +24,7 @@
 	"npc_dota_hero_ursa"		"1"
 	"npc_dota_hero_sniper"		"1"
 	"npc_dota_hero_juggernaut"	"1"
+	"npc_dota_hero_terrorblade" "1"
 	"npc_dota_hero_phantom_assassin"	"1"
 	
 	"npc_dota_hero_ancient_apparition"	"1"
@@ -34,6 +36,7 @@
 	"npc_dota_hero_witch_doctor"	"1"
 	"npc_dota_hero_queenofpain"		"1"
 	"npc_dota_hero_jakiro"			"1"
+	"npc_dota_hero_skywrath_mage"	"1"
 	"npc_dota_hero_zeus"		"1"
 
 }
