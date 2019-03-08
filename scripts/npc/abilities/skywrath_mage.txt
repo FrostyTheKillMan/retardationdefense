@@ -46,7 +46,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bolt_damage"			"120"
+				"bolt_damage"			"100"
 			}
 			"04"
 			{
@@ -120,7 +120,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"70 140 210 280 350 420 490"
+				"damage"			"70 130 190 250 310 370 430"
 			}
 			"05"
 			{
@@ -217,7 +217,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"2"
-
+		"LevelsBetweenUpgrades"         "6"
+        	"MaxLevel"                      "5"
 		"HasScepterUpgrade"			"1"
 
 		// Casting
@@ -246,7 +247,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
+				"duration"				"2.4"
 			}
 			"03"
 			{
