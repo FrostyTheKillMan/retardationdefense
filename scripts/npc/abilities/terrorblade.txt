@@ -167,7 +167,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_attack_range"			"550 650 750 850 950 1050 1150"
+				"tooltip_attack_range"			"425"
 				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_3"
 			}
 			"06"
