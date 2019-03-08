@@ -125,7 +125,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"angle"						"180 210 240 270 300 330 360"
+				"angle"						"180"
 			}
 			"03"
 			{
@@ -256,7 +256,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"spear_distance_from_wall"	"160 170 180 190 200"
+				"spear_distance_from_wall"	"550"
 			}
 			"07"
 			{
