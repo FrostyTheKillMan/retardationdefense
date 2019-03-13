@@ -3,8 +3,10 @@
 #base "abilities/custom/huskar_custom.txt"
 #base "abilities/custom/necrolyte_custom.txt"
 #base "abilities/custom/ogre_magi_custom.txt"
+#base "abilities/custom/phantom_assassin_custom.txt"
 #base "abilities/custom/pudge_custom.txt"
 #base "abilities/custom/silencer_custom.txt"
+#base "abilities/custom/terrorblade_custom.txt"
 #base "abilities/custom/ursa_custom.txt"
 
 #base "abilities/units/creep_lane.txt"

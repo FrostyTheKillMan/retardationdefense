@@ -1,0 +1,33 @@
+"DOTAAbilities"
+{
+	"phantom_assassin_sharpened_blade_lua"
+	{
+		//General
+		"BaseClass"				"ability_lua"
+		"AbilityTextureName"    "phantom_assassin_sharpened_blade"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSSIVE"
+		"ScriptFile"			"abilities/phantom_assassin/phantom_assassin_sharpened_blade_lua.lua"
+		
+		//Special
+		//-----------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"armor_reduction"	"1 1 2 2 3 3 4"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"percent_chance"  "12 15 18 21 24 27 30"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"1 2 3 4 5 6 7"
+			}
+		
+		}
+	}
+}

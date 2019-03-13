@@ -1,0 +1,28 @@
+"DOTAAbilities"
+{
+	"terrorblade_zeal_lua"
+	{
+		//General
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"ursa_earthshock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"					"abilities/terrorblade/terrorblade_zeal_lua.lua"
+		
+		//Special
+		//---------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen"				"4 6 8 10 12 14 16"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed"				"20 30 40 50 60 70 80"
+			}
+		
+		}
+	}
+}
