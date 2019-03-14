@@ -161,7 +161,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"400 500 600 700 800 900 1000"
+				"bonus_range"			"425 425 425 425 425 425 425"
 				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_3"
 			}
 			"05"
