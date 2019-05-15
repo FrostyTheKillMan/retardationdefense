@@ -222,7 +222,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"20 35 50"
+				"corrosive_breath_damage"	"20 50 80"
 			}
 			"06"
 			{
