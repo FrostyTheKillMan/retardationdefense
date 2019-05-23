@@ -4,7 +4,7 @@
 	{
 		//General
 		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"ursa_earthshock"
+		"AbilityTextureName"			"terrorblade_zeal"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ScriptFile"					"abilities/terrorblade/terrorblade_zeal_lua.lua"
 		

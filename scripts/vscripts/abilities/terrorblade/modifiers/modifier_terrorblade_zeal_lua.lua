@@ -16,20 +16,13 @@ end
 -------------------------------------------
 
 function modifier_terrorblade_zeal_lua:OnCreate( kv )
-	if IsServer() then
-		--get reference
-		self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
-		self.attack_speed = self:GetAbility():GetSpecialValueFor("attack_speed")
-	end
-
+	self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
+	self.attack_speed = self:GetAbility():GetSpecialValueFor("attack_speed")
 end
 
 function modifier_terrorblade_zeal_lua:OnRefresh( kv )
-	if IsServer() then
-		self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
-		self.attack_speed = self:GetAbility():GetSpecialValueFor("attack_speed")
-	end
-
+	self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
+	self.attack_speed = self:GetAbility():GetSpecialValueFor("attack_speed")
 end
 
 -------------------------------------------

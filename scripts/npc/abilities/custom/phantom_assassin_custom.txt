@@ -5,7 +5,7 @@
 		//General
 		"BaseClass"				"ability_lua"
 		"AbilityTextureName"    "phantom_assassin_sharpened_blade"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSSIVE"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ScriptFile"			"abilities/phantom_assassin/phantom_assassin_sharpened_blade_lua.lua"
 		
 		//Special
